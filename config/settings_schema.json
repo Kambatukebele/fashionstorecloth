@@ -43,10 +43,19 @@
         "name": "Font",
         "settings": [
             {
+                "type": "paragraph",
+                "content": "Choose the font style for your headings and bodys"
+            },
+            {
                 "type": "font_picker",
-                "id": "font_picker_id",
-                "label": "Font",
-                "info": "This theme using only one font",
+                "id": "font_picker_heading",
+                "label": "Heading",
+                "default": "mono"
+            },
+            {
+                "type": "font_picker",
+                "id": "font_picker_body",
+                "label": "Body",
                 "default": "mono"
             }
         ]
