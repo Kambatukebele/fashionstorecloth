@@ -646,6 +646,10 @@ video {
 .clear-none {
   clear: none;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mt-2 {
   margin-top: 8px;
 }
@@ -724,6 +728,13 @@ video {
 .hidden {
   display: none;
 }
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.w-\[280px\] {
+  width: 280px;
+}
 .w-\[this-is\\\\\] {
   width: this-is\\;
 }
@@ -732,6 +743,9 @@ video {
 }
 .w-\[weird-and-invalid\] {
   width: weird-and-invalid;
+}
+.w-full {
+  width: 100%;
 }
 .flex-shrink {
   flex-shrink: 1;
@@ -777,6 +791,32 @@ video {
 }
 .transform-none {
   transform: none;
+}
+@keyframes slide-in {
+
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+.animate-slide-in {
+  animation: slide-in 1s ease forwards;
+}
+@keyframes slide-out {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animate-slide-out {
+  animation: slide-out 1s ease forwards;
 }
 .touch-auto {
   touch-action: auto;
@@ -1470,6 +1510,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
@@ -1566,6 +1610,10 @@ video {
 .px-5 {
   padding-left: 20px;
   padding-right: 20px;
+}
+.py-5 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .text-left {
   text-align: left;
@@ -2034,6 +2082,10 @@ video {
   text-align: center;
 }
 @media (min-width: 640px) {
+
+  .sm\:w-full {
+    width: 100%;
+  }
 
   .sm\:underline {
     text-decoration-line: underline;
