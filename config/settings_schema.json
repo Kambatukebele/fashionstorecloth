@@ -38,5 +38,17 @@
                 "info": "This is Logo image"
             },
         ]
+    },
+    {
+        "name": "Font",
+        "settings": [
+            {
+                "type": "font_picker",
+                "id": "font_picker_id",
+                "label": "Font",
+                "info": "This theme using only one font",
+                "default": "mono"
+            }
+        ]
     }
 ]
