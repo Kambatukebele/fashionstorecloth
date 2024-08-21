@@ -6,5 +6,37 @@
         "theme_version": "1.0.0",
         "theme_support_email": "kambatukebele@gmail.com",
         "theme_documentation_url": "https:kambatukebele.com"
+    },
+    {
+        "name": "Favicon",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "favicon_id",
+                "label": "Favicon",
+                "info": "The favicon must have the size of 32 x 32px"
+            }
+        ]
+    },
+    {
+        "name": "Logo",
+        "settings": [
+            {
+                "type": "paragraph",
+                "content": "Choose One Type of Logo svg or image",
+            },
+            {
+                "type": "html",
+                "id": "logo_svg",
+                "label": "Add Logo svg",
+                "info": "This is Logo svg"
+            },
+            {
+                "type": "image_picker",
+                "id": "logo_image",
+                "label": "Add Logo image",
+                "info": "This is Logo image"
+            },
+        ]
     }
 ]
