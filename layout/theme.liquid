@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
+    {% comment %} Favicon {% endcomment %}
     {%- if settings.favicon_id != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon_id | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -42,12 +43,11 @@
     {% endcomment %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'reset.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body>
     <main id="MainContent" class="" role="main" tabindex="-1">
-      <h1>Hello kamba</h1>
+      {% sections 'header-group' %}
       {{ content_for_layout }}
     </main>
   </body>

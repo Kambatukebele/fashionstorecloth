@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "prettier-plugin-liquid": "^0.0.1-security",
+    "tailwindcss": "^3.4.10",
+    "tailwindcss-rem-to-px": "^0.1.1",
+    "vite": "^5.4.2"
+  },
+  "scripts": {
+    "dev": "shopify theme dev -e fashion",
+    "watch": "vite build --watch",
+    "pull": "shopify theme pull",
+    "push": "shopify theme push -e fashion"
+  }
+}
