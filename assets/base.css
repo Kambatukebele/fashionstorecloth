@@ -503,11 +503,15 @@ video {
 }
 .container {
   width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 @media (min-width: 640px) {
 
   .container {
     max-width: 640px;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 }
 @media (min-width: 768px) {
@@ -520,18 +524,24 @@ video {
 
   .container {
     max-width: 1024px;
+    padding-right: 4rem;
+    padding-left: 4rem;
   }
 }
 @media (min-width: 1280px) {
 
   .container {
     max-width: 1280px;
+    padding-right: 5rem;
+    padding-left: 5rem;
   }
 }
 @media (min-width: 1536px) {
 
   .container {
     max-width: 1536px;
+    padding-right: 6rem;
+    padding-left: 6rem;
   }
 }
 .sr-only {
@@ -1959,12 +1969,16 @@ video {
 
   .sm\:container {
     width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   @media (min-width: 640px) {
 
     .sm\:container {
       max-width: 640px;
+      padding-right: 2rem;
+      padding-left: 2rem;
     }
   }
 
@@ -1979,6 +1993,8 @@ video {
 
     .sm\:container {
       max-width: 1024px;
+      padding-right: 4rem;
+      padding-left: 4rem;
     }
   }
 
@@ -1986,6 +2002,8 @@ video {
 
     .sm\:container {
       max-width: 1280px;
+      padding-right: 5rem;
+      padding-left: 5rem;
     }
   }
 
@@ -1993,6 +2011,8 @@ video {
 
     .sm\:container {
       max-width: 1536px;
+      padding-right: 6rem;
+      padding-left: 6rem;
     }
   }
 }
