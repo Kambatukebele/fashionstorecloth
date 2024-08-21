@@ -59,5 +59,131 @@
                 "default": "mono"
             }
         ]
+    },
+    {
+        "name": "Theme colors",
+        "settings": [
+            {
+                "type": "paragraph",
+                "content": "Choose your theme color"
+            },
+            {
+                "type": "color_scheme_group",
+                "id": "color_scheme_group_id",
+                "definition": [
+                    {
+                        "type": "header",
+                        "content": "Annoucement bar",
+                    },
+                    {
+                        "type": "color_background",
+                        "id": "color_background_announcement_bar_id",
+                        "label": "Background color Annoucement",
+                        "default": "#000000"
+                    },
+                    {
+                        "type": "color",
+                        "id": "color_announcement_bar_id",
+                        "label": "Text Color Annoucement",
+                        "default": "#ffffff"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Header color"
+                    },
+                    {
+                        "type": "color_background",
+                        "id": "color_background_header_id",
+                        "label": "Background color Header",
+                        "default": "#000000"
+                    },
+                    {
+                        "type": "color",
+                        "id": "color_header_id",
+                        "label": "Color header",
+                        "default": "#ffffff"
+                    }, 
+                    {
+                        "type": "header",
+                        "content": "Background"
+                    },
+                    {
+                        "type": "color",
+                        "id": "background",
+                        "label": "Background color",
+                        "default": "#ffffff"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Additional"
+                    },
+                    {
+                        "type": "color",
+                        "id": "text",
+                        "label": "Text",
+                        "default": "#000000"
+                    },
+                    {
+                    "type": "color",
+                    "id": "primary_button",
+                    "label": "Primary",
+                    "default": "#121212"
+                    },
+                    {
+                    "type": "color",
+                    "id": "on_primary_button",
+                    "label": "On Primary Button",
+                    "default": "#FFFFFF"
+                    },
+                    {
+                    "type": "color",
+                    "id": "primary_button_border",
+                    "label": "Primary Button Border",
+                    "default": "#121212"
+                    },
+                    {
+                    "type": "color",
+                    "id": "secondary_button",
+                    "label": "Secondary Button"
+                    },
+                    {
+                    "type": "color",
+                    "id": "on_secondary_button",
+                    "label": "On Secondary Button",
+                    "default": "#121212"
+                    },
+                    {
+                    "type": "color",
+                    "id": "secondary_button_border",
+                    "label": "Secondary Button Border",
+                    "default": "#FFFFFF"
+                    },
+                    {
+                    "type": "color",
+                    "id": "icons",
+                    "label": "Icons",
+                    "default": "#FFFFFF"
+                    },
+                    {
+                    "type": "color",
+                    "id": "links",
+                    "label": "Links",
+                    "default": "#121212"
+                    }                    
+                ],
+                "role": {
+                    "background": "background",
+                    "text": "text",
+                    "primary_button": "primary_button",
+                    "on_primary_button": "on_primary_button",
+                    "primary_button_border": "primary_button_border",
+                    "secondary_button": "secondary_button",
+                    "on_secondary_button": "on_secondary_button",
+                    "secondary_button_border": "secondary_button_border",
+                    "icons": "icons",
+                    "links": "links"
+                }
+            }
+        ]
     }
 ]
