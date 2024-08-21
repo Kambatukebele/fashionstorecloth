@@ -44,11 +44,13 @@
       %}
     {% endcomment %}
 
-    {% comment %} {{ 'base.css' | asset_url | stylesheet_tag }} {% endcomment %}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'reset.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body>
     <main id="MainContent" class="" role="main" tabindex="-1">
+      <h1>Hello kamba</h1>
       {{ content_for_layout }}
     </main>
   </body>
