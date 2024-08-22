@@ -1,13 +1,15 @@
 {
-    "type": "header",
-    "name": "Header Group",
-    "sections": {
-        "announcement-bar": {
-            "type": "announcement-bar",
-            "settings": {}
-        }
-    },
-    "order": [
-        "announcement-bar"
-    ]
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "select_announcement_desktop_id": "py-6"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar"
+  ]
 }
