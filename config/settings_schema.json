@@ -74,35 +74,54 @@
                     {
                         "type": "header",
                         "content": "Annoucement bar",
+                        "info": "Background color and text color for the announcement bar only"
                     },
                     {
                         "type": "color_background",
                         "id": "color_background_announcement_bar_id",
-                        "label": "Background color Annoucement",
+                        "label": "Background color",
                         "default": "#000000"
                     },
                     {
                         "type": "color",
                         "id": "color_announcement_bar_id",
-                        "label": "Text Color Annoucement",
+                        "label": "Text Color",
                         "default": "#ffffff"
                     },
                     {
                         "type": "header",
-                        "content": "Header color"
+                        "content": "Header color",
+                        "info": "Background color and text color for the Header only"
                     },
                     {
                         "type": "color_background",
                         "id": "color_background_header_id",
-                        "label": "Background color Header",
+                        "label": "Background color",
                         "default": "#000000"
                     },
                     {
                         "type": "color",
                         "id": "color_header_id",
-                        "label": "Color header",
+                        "label": "Text Color",
                         "default": "#ffffff"
-                    }, 
+                    },
+                    {
+                        "type": "header",
+                        "content": "Footer color",
+                        "info": "Background color and text color for the Footer only"
+                    },
+                    {
+                        "type": "color_background",
+                        "id": "color_background_footer_id",
+                        "label": "Background color",
+                        "default": "#000000"
+                    },
+                    {
+                        "type": "color",
+                        "id": "color_footer_id",
+                        "label": "Text Color",
+                        "default": "#ffffff"
+                    },
                     {
                         "type": "header",
                         "content": "Background"
@@ -120,42 +139,49 @@
                     {
                         "type": "color",
                         "id": "text",
-                        "label": "Text",
+                        "label": "Headings",
+                        "default": "#000000"
+                    },
+                    {
+                        "type": "color",
+                        "id": "text_paragraph",
+                        "label": "paragraph",
                         "default": "#000000"
                     },
                     {
                     "type": "color",
                     "id": "primary_button",
-                    "label": "Primary",
+                    "label": "Primary button background",
                     "default": "#121212"
                     },
                     {
                     "type": "color",
                     "id": "on_primary_button",
-                    "label": "On Primary Button",
+                    "label": "Primary button text",
                     "default": "#FFFFFF"
                     },
                     {
                     "type": "color",
                     "id": "primary_button_border",
-                    "label": "Primary Button Border",
+                    "label": "Primary button Border",
                     "default": "#121212"
                     },
                     {
                     "type": "color",
                     "id": "secondary_button",
-                    "label": "Secondary Button"
+                    "label": "Secondary button background",
+                    "default": "#121212"
                     },
                     {
                     "type": "color",
                     "id": "on_secondary_button",
-                    "label": "On Secondary Button",
+                    "label": "Secondary button text",
                     "default": "#121212"
                     },
                     {
                     "type": "color",
                     "id": "secondary_button_border",
-                    "label": "Secondary Button Border",
+                    "label": "Secondary button border",
                     "default": "#FFFFFF"
                     },
                     {

@@ -1,16 +1,15 @@
-<section class="w-full h-fit {{ section.settings.select_announcement_desktop_id }} bg-red-100">
+<section style="background:{{ section.settings.color_scheme_background_announcement_id.settings.color_background_announcement_bar_id }}; color: {{ section.settings.color_scheme_background_announcement_id.settings.color_announcement_bar_id }}" class="w-full h-fit {{ section.settings.select_announcement_desktop_id }}">
   <div class="container mx-auto">
     <!-- Left side container-->
     <div class="w-full whitespace-nowrap overflow-hidden">
-      <p class="announcement inline-block w-full mx-auto border sm:w-full text-center">
-        FREE standard shipping $100+*
-      </p>
-      <p class="announcement inline-block w-full mx-auto border sm:w-full text-center">
-        Mix & Match Save up to 25%
-      </p>
-      <p class="announcement inline-block w-full mx-auto border sm:w-full text-center">
-        Kamba tukebele
-      </p>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when "announcement" -%}
+            <p class="announcement inline-block w-full mx-auto text-center {{ section.settings.select_size_text_annoucement_id }}">
+                {{ block.settings.inline_richtext_annoucement_block_id }}
+            </p>
+        {%- endcase -%}
+      {%- endfor -%}
     </div>
   </div>
 </section>
@@ -20,6 +19,36 @@
 {
   "name": "Annoucement bar",
   "settings": [
+    {
+      "type": "header",
+      "content": "Choose Announcement Color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_background_announcement_id",
+      "label": "Background Annoucement",
+      "default": "scheme_1",
+    },
+    {
+      "type": "select",
+      "id": "select_size_text_annoucement_id",
+      "label": "Text size",
+      "options": [
+        {
+          "value": "text-xs",
+          "label": "Extra small"
+        },
+        {
+          "value": "text-sm",
+          "label": "Small"
+        },
+        {
+          "value": "text-base",
+          "label": "base"
+        }
+      ],
+      "default": "text-sm"
+    },
     {
       "type": "select",
       "id": "select_announcement_desktop_id",
@@ -51,13 +80,23 @@
         }
       ],
       "default": "py-1"
-    },
-    {
-      "type": "paragraph",
-      "content": "Mobile Top Padding",
     }
   ],
-  "blocks": [],
+  "blocks": [
+    {
+      "name": "Announcement",
+      "type": "announcement",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "inline_richtext_annoucement_block_id",
+          "label": "Announcement",
+          "default": "Welcome to our fashion store"
+        }
+      ]
+    }
+  ],
   "presets": [{ "name": "Announcement bar" }]
 }
 {% endschema %}
