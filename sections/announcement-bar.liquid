@@ -5,7 +5,7 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when "announcement" -%}
-            <p class="announcement inline-block w-full mx-auto text-center">
+            <p class="announcement inline-block w-full mx-auto text-center {{ section.settings.select_size_text_annoucement_id }}">
                 {{ block.settings.inline_richtext_annoucement_block_id }}
             </p>
         {%- endcase -%}
@@ -28,6 +28,26 @@
       "id": "color_scheme_background_announcement_id",
       "label": "Background Annoucement",
       "default": "scheme_1",
+    },
+    {
+      "type": "select",
+      "id": "select_size_text_annoucement_id",
+      "label": "Text size",
+      "options": [
+        {
+          "value": "text-xs",
+          "label": "Extra small"
+        },
+        {
+          "value": "text-sm",
+          "label": "Small"
+        },
+        {
+          "value": "text-base",
+          "label": "base"
+        }
+      ],
+      "default": "text-sm"
     },
     {
       "type": "select",
