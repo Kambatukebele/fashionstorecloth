@@ -1,0 +1,70 @@
+<header class="w-full h-fit relative py-5 border">
+    <nav class="container flex justify-between items-center">
+        <a href="{{ shop.url }}" class="lg:block lg:w-[200px]">
+            {%- if settings.logo_image -%}
+                    {%-  assign LOGO_SIZE = settings.logo_size -%}
+                    {{- settings.logo_image | image_url: width: LOGO_SIZE | image_tag   -}}
+                {%- else -%}
+                    {{- shop.name | upcase -}}
+            {%- endif -%}
+        </a>
+        <div  class="MENU absolute h-screen top-14 left-0 right-0 -translate-x-[1200px] block duration-1000 ease-in-out lg:static lg:translate-x-0 lg:h-fit lg:flex lg:justify-between lg:items-center lg:w-[824px]">
+            <ul class="w-full px-8  flex justify-center items-start flex-col mx-auto my-6 lg:flex-row lg:my-0 lg:mx-0  lg:px-0 lg:w-[760px]">
+                {%- for link in linklists.main-menu.links -%}
+                    <li class="w-full uppercase text-base my-2 lg:my-0">
+                        <a class="w-full flex justify-between items-center" href="{{ link.url }}">
+                            <span class="block">
+                                {{ link.title }}
+                            </span>
+                            <span class="block lg:hidden">
+                                {%- render "arrow-right" -%}
+                            </span>     
+                        </a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+            <div class="hidden">
+                {%-  render "icon-search" -%}
+                <input type="search" placeholder="Search" >
+            </div>
+            <div class="w-full px-8 mx-auto lg:flex lg:justify-center lg:items-center lg:mx-0 lg:w-16 lg:px-0 lg:gap-5">
+                <a class="flex justify-start items-center gap-4 my-6 lg:my-0" href="#">
+                    <span class="block">{%- render "icon-user" -%}</span>
+                    <span class="block uppercase text-base lg:hidden">My Account</span>
+                </a>
+                <div class="hidden lg:block">
+                    <span>{%- render "icon-basket" -%}</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex  justify-center items-center lg:hidden">
+            <div class="block HAMBURGER_MENU lg:hidden">
+                <span>{%- render "icon-menu" -%}</span>
+            </div>
+            <div class="hidden CLOSE_MENU lg:hidden">
+                <span>{%- render "icon-close" -%}</span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script src="{{ 'header.js' | asset_url }}" defer></script>
+{% schema %}
+{
+    "name": "Header",
+    "class": "header",
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+        }
+    ],
+    "blocks": [],
+    "presets": [
+        {
+            "name": "Header"
+        }
+    ],
+}
+{% endschema %}
