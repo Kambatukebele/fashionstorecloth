@@ -4,8 +4,28 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_Jx3XrR": {
+          "type": "announcement",
+          "settings": {
+            "inline_richtext_annoucement_block_id": "<a href=\"\/products\/adidas-classic-backpack\" target=\"_blank\" title=\"ADIDAS | CLASSIC BACKPACK\"><em>FREE standard shipping $100+*<\/em><\/a>"
+          }
+        },
+        "announcement_iBzCcy": {
+          "type": "announcement",
+          "settings": {
+            "inline_richtext_annoucement_block_id": "<em>Mix & Match Save up to 25%<\/em>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_Jx3XrR",
+        "announcement_iBzCcy"
+      ],
       "settings": {
-        "select_announcement_desktop_id": "py-6"
+        "color_scheme_background_announcement_id": "scheme-1",
+        "select_size_text_annoucement_id": "sm",
+        "select_announcement_desktop_id": "py-2"
       }
     }
   },

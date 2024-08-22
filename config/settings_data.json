@@ -1,5 +1,53 @@
 {
-  "current": "Default",
+  "current": {
+    "content_for_index": [
+
+    ],
+    "color_scheme_group_id": {
+      "scheme-1": {
+        "settings": {
+          "color_background_announcement_bar_id": "#000000",
+          "color_announcement_bar_id": "#ffffff",
+          "color_background_header_id": "#000000",
+          "color_header_id": "#ffffff",
+          "color_background_footer_id": "#000000",
+          "color_footer_id": "#ffffff",
+          "background": "#ffffff",
+          "text": "#000000",
+          "text_paragraph": "#000000",
+          "primary_button": "#121212",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#121212",
+          "secondary_button": "#121212",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "links": "#121212"
+        }
+      },
+      "scheme-72a5b5f6-65ed-4c93-bb66-a972a5173d60": {
+        "settings": {
+          "color_background_announcement_bar_id": "linear-gradient(127deg, rgba(254, 217, 81, 1) 11%, rgba(255, 70, 199, 1) 81%)",
+          "color_announcement_bar_id": "#ffffff",
+          "color_background_header_id": "#000000",
+          "color_header_id": "#ffffff",
+          "color_background_footer_id": "#000000",
+          "color_footer_id": "#ffffff",
+          "background": "#ffffff",
+          "text": "#000000",
+          "text_paragraph": "#000000",
+          "primary_button": "#121212",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#121212",
+          "secondary_button": "#121212",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "links": "#121212"
+        }
+      }
+    }
+  },
   "presets": {
     "Default": {
       "color_scheme_group_id": {
@@ -13,7 +61,7 @@
             "color_footer_id": "#ffffff",
             "background": "#ffffff",
             "text": "#000000",
-            "text_paragraph":"#000000",
+            "text_paragraph": "#000000",
             "primary_button": "#121212",
             "on_primary_button": "#FFFFFF",
             "primary_button_border": "#121212",
