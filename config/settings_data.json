@@ -1,6 +1,30 @@
 {
-  "current": {
-    
-  },
-  "presets":{}
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "color_scheme_group_id": {
+        "scheme-1": {
+          "settings": {
+            "color_background_announcement_bar_id": "#000000",
+            "color_announcement_bar_id": "#ffffff",
+            "color_background_header_id": "#000000",
+            "color_header_id": "#ffffff",
+            "color_background_footer_id": "#000000",
+            "color_footer_id": "#ffffff",
+            "background": "#ffffff",
+            "text": "#000000",
+            "text_paragraph":"#000000",
+            "primary_button": "#121212",
+            "on_primary_button": "#FFFFFF",
+            "primary_button_border": "#121212",
+            "secondary_button": "#121212",
+            "on_secondary_button": "#121212",
+            "secondary_button_border": "#FFFFFF",
+            "icons": "#FFFFFF",
+            "links": "#121212"
+          }
+        }
+      }
+    }
+  }
 }
