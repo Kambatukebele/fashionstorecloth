@@ -36,9 +36,16 @@
         "select_size_text_annoucement_id": "sm",
         "select_announcement_desktop_id": "py-2"
       }
+    },
+    "header_gQEXUX": {
+      "type": "header",
+      "settings": {
+        "menu": ""
+      }
     }
   },
   "order": [
-    "announcement-bar"
+    "announcement-bar",
+    "header_gQEXUX"
   ]
 }
