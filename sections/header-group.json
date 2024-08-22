@@ -1,9 +1,19 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "type": "header",
   "name": "Header Group",
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+<<<<<<< HEAD
       "blocks": {
         "announcement_Jx3XrR": {
           "type": "announcement",
@@ -26,6 +36,10 @@
         "color_scheme_background_announcement_id": "scheme-1",
         "select_size_text_annoucement_id": "sm",
         "select_announcement_desktop_id": "py-2"
+=======
+      "settings": {
+        "select_announcement_desktop_id": "py-6"
+>>>>>>> d9afd49c1b078dee424cefedd11e93f31b143ec7
       }
     }
   },

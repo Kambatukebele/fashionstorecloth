@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "content_for_index": [
@@ -10,11 +19,16 @@
           "color_announcement_bar_id": "#ffffff",
           "color_background_header_id": "#000000",
           "color_header_id": "#ffffff",
+<<<<<<< HEAD
           "color_background_footer_id": "#000000",
           "color_footer_id": "#ffffff",
           "background": "#ffffff",
           "text": "#000000",
           "text_paragraph": "#000000",
+=======
+          "background": "#ffffff",
+          "text": "#000000",
+>>>>>>> d9afd49c1b078dee424cefedd11e93f31b143ec7
           "primary_button": "#121212",
           "on_primary_button": "#ffffff",
           "primary_button_border": "#121212",
@@ -31,11 +45,16 @@
           "color_announcement_bar_id": "#ffffff",
           "color_background_header_id": "#000000",
           "color_header_id": "#ffffff",
+<<<<<<< HEAD
           "color_background_footer_id": "#000000",
           "color_footer_id": "#ffffff",
           "background": "#ffffff",
           "text": "#000000",
           "text_paragraph": "#000000",
+=======
+          "background": "#ffffff",
+          "text": "#000000",
+>>>>>>> d9afd49c1b078dee424cefedd11e93f31b143ec7
           "primary_button": "#121212",
           "on_primary_button": "#ffffff",
           "primary_button_border": "#121212",
