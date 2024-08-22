@@ -1,20 +1,16 @@
-<section class="w-full h-fit py-5 bg-red-100">
+<section class="w-full h-fit {{ section.settings.select_announcement_desktop_id }} bg-red-100">
   <div class="container mx-auto">
     <!-- Left side container-->
     <div class="w-full whitespace-nowrap overflow-hidden">
-      <p class="announcement inline-block w-[280px] mx-auto border sm:w-full text-center">
+      <p class="announcement inline-block w-full mx-auto border sm:w-full text-center">
         FREE standard shipping $100+*
       </p>
-      <p class="announcement inline-block w-[280px] mx-auto border sm:w-full text-center">
+      <p class="announcement inline-block w-full mx-auto border sm:w-full text-center">
         Mix & Match Save up to 25%
       </p>
-      <p class="announcement inline-block w-[280px] mx-auto border sm:w-full text-center">
+      <p class="announcement inline-block w-full mx-auto border sm:w-full text-center">
         Kamba tukebele
       </p>
-    </div>
-    <!-- Right side container-->
-    <div class="hidden">
-      second div
     </div>
   </div>
 </section>
@@ -23,7 +19,45 @@
 {% schema %}
 {
   "name": "Annoucement bar",
-  "settings": [],
+  "settings": [
+    {
+      "type": "select",
+      "id": "select_announcement_desktop_id",
+      "label": "Desktop Padding",
+      "options": [
+        {
+          "value": "py-1",
+          "label": "4px"
+        },
+        {
+          "value": "py-2",
+          "label": "8px"
+        },
+        {
+          "value": "p-3",
+          "label": "12px",
+        },
+        {
+          "value": "py-4",
+          "label": "16px"
+        },
+        {
+          "value": "py-5",
+          "label": "20px"
+        },
+        {
+          "value": "py-6",
+          "label": "28px"
+        }
+      ],
+      "default": "py-1"
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile Top Padding",
+    }
+  ],
+  "blocks": [],
   "presets": [{ "name": "Announcement bar" }]
 }
 {% endschema %}
