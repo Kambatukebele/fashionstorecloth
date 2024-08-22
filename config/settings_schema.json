@@ -22,21 +22,21 @@
         "name": "Logo",
         "settings": [
             {
-                "type": "paragraph",
-                "content": "Choose One Type of Logo svg or image",
-            },
-            {
-                "type": "html",
-                "id": "logo_svg",
-                "label": "Add Logo svg",
-                "info": "This is Logo svg"
-            },
-            {
                 "type": "image_picker",
                 "id": "logo_image",
                 "label": "Add Logo image",
                 "info": "This is Logo image"
             },
+            {
+                "type": "range",
+                "id": "logo_size",
+                "label": "Logo size",
+                "min": 50,
+                "max": 120,
+                "unit": "px",
+                "step": 1,
+                "default": 90
+            }
         ]
     },
     {
