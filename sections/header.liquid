@@ -1,6 +1,6 @@
-<header class="w-full h-fit relative py-5 border">
-    <nav class="container flex justify-between items-center">
-        <a href="{{ shop.url }}" class="lg:block lg:w-[200px]">
+<header style="background: {{ section.settings.color_scheme_header_id.settings.color_background_header_id }}; color: {{ section.settings.color_scheme_header_id.settings.color_header_id }}" class="w-full h-fit relative py-5 border">
+    <nav class="container flex justify-between items-center px-2 {% if section.settings.select_header_position == "lg:flex-wrap" %} {{ section.settings.select_header_position }} {% endif %}">
+        <a href="{{ shop.url }}" class="{% if section.settings.select_header_position == "lg:flex-wrap" %} lg:w-full lg:flex lg:justify-center lg:mb-10 {% else %} lg:w-[200px] lg:block {% endif %}">
             {%- if settings.logo_image -%}
                     {%-  assign LOGO_SIZE = settings.logo_size -%}
                     {{- settings.logo_image | image_url: width: LOGO_SIZE | image_tag   -}}
@@ -8,10 +8,10 @@
                     {{- shop.name | upcase -}}
             {%- endif -%}
         </a>
-        <div  class="MENU absolute h-screen top-14 left-0 right-0 -translate-x-[1200px] block duration-1000 ease-in-out lg:static lg:translate-x-0 lg:h-fit lg:flex lg:justify-between lg:items-center lg:w-[824px]">
-            <ul class="w-full px-8  flex justify-center items-start flex-col mx-auto my-6 lg:flex-row lg:my-0 lg:mx-0  lg:px-0 lg:w-[760px]">
-                {%- for link in linklists.main-menu.links -%}
-                    <li class="w-full uppercase text-base my-2 lg:my-0">
+        <div  class="MENU absolute h-screen top-11 left-0 right-0 -translate-x-[1200px] block duration-1000 ease-in-out lg:static lg:translate-x-0 lg:h-fit lg:w-[660px] {% if section.settings.select_header_position == "lg:order-2" %} lg:order-first {% endif %}">
+            <ul class="w-full px-8 bg-white flex justify-center items-start flex-col mx-auto my-6 lg:flex-row lg:my-0 lg:mx-0  lg:px-0 lg:items-center {% if section.settings.select_header_position == "lg:order-2" %} lg:justify-start {% else %} lg:justify-between {% endif %}">
+                {%- for link in section.settings.menu.links -%}
+                    <li class="w-full {{ section.settings.select_header_text_transform_id }} text-base my-2 lg:my-0 lg:w-auto {% if section.settings.select_header_position == "lg:flex-wrap" %} lg:mr-4 {% else %} lg:mr-4 {% endif %} ">
                         <a class="w-full flex justify-between items-center" href="{{ link.url }}">
                             <span class="block">
                                 {{ link.title }}
@@ -23,21 +23,21 @@
                     </li>
                 {%- endfor -%}
             </ul>
-            <div class="hidden">
-                {%-  render "icon-search" -%}
-                <input type="search" placeholder="Search" >
-            </div>
-            <div class="w-full px-8 mx-auto lg:flex lg:justify-center lg:items-center lg:mx-0 lg:w-16 lg:px-0 lg:gap-5">
-                <a class="flex justify-start items-center gap-4 my-6 lg:my-0" href="#">
-                    <span class="block">{%- render "icon-user" -%}</span>
-                    <span class="block uppercase text-base lg:hidden">My Account</span>
-                </a>
-                <div class="hidden lg:block">
-                    <span>{%- render "icon-basket" -%}</span>
-                </div>
+        </div>
+        <div class="hidden xl:flex xl:justify-around xl:items-center border xl:rounded-2xl xl:w-52 xl:py-1 xl:bg-gray-100 xl:order-none ">
+            <span>{%-  render "icon-search" -%}</span>
+            <input class="xl:w-40 bg-gray-100 text-sm outline-none" type="search" placeholder="Search" >
+        </div>
+        <div class="w-full flex justify-end mr-4 items-center gap-3 lg:w-40 lg:mr-0 lg:order-none xl:w-20">
+            <a class="w-6 h-6 block" href="#">
+                <span class="block sm:w-5 sm:h-5">{%- render "icon-user" -%}</span>
+            </a>
+            <div class="w-6 h-6 block relative">
+                <span class="block">{%- render "icon-basket" -%}</span>
+                <span class="w-5 h-5 text-sm absolute top-1 left-0 right-0 bottom-0 bg-transparent text-gray-800 text-center">1</span>
             </div>
         </div>
-        <div class="flex  justify-center items-center lg:hidden">
+        <div class="flex justify-center w-5 h-5 items-center lg:hidden">
             <div class="block HAMBURGER_MENU lg:hidden">
                 <span>{%- render "icon-menu" -%}</span>
             </div>
@@ -58,6 +58,48 @@
             "type": "link_list",
             "id": "menu",
             "label": "Menu"
+        },
+        {
+            "type": "color_scheme",
+            "id": "color_scheme_header_id",
+            "label": "Background Color",
+            "default": "scheme-1"
+        },
+        {
+            "type": "select",
+            "id": "select_header_position",
+            "label": "Header Position",
+            "options": [
+                {
+                    "value": "",
+                    "label": "Logo Left"
+                },
+                {
+                    "value": "lg:order-2",
+                    "label": "Logo middle"
+                },
+                {
+                    "value": "lg:flex-wrap",
+                    "label": "Logo top"
+                }
+            ],
+            "default": ""
+        },
+        {
+            "type": "select",
+            "id": "select_header_text_transform_id",
+            "label": "Menu Text Transform",
+            "options": [
+                {
+                    "label": "Uppercase",
+                    "value": "uppercase"
+                },
+                {
+                    "label": "Capitalize",
+                    "value": "capitalize"
+                }
+            ],
+            "default": "capitalize"
         }
     ],
     "blocks": [],
