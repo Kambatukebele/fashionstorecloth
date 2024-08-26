@@ -40,13 +40,9 @@
     "header_gQEXUX": {
       "type": "header",
       "settings": {
-<<<<<<< HEAD
         "menu": "main-menu",
         "color_scheme_header_id": "",
         "select_header_position": ""
-=======
-        "menu": "main-menu"
->>>>>>> 2934639323ec6c45fe0baf9ac5cf6c9d207678e7
       }
     }
   },
