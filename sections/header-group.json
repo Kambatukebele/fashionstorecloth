@@ -42,12 +42,19 @@
       "settings": {
         "menu": "main-menu",
         "color_scheme_header_id": "",
-        "select_header_position": ""
+        "select_header_position": "",
+        "select_header_text_transform_id": "capitalize"
+      }
+    },
+    "image_banner_QrpCq7": {
+      "type": "image-banner",
+      "settings": {
       }
     }
   },
   "order": [
     "announcement-bar",
-    "header_gQEXUX"
+    "header_gQEXUX",
+    "image_banner_QrpCq7"
   ]
 }
