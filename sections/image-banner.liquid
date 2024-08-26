@@ -1,9 +1,38 @@
-<section>
-    <div>
-        image banner
+<section id="image-banner-img" class="">
+    <div class="container mx-auto">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-white flex flex-col justify-center items-start gap-4 h-auto w-[300px]">
+            <h1 class="text-3xl font-semibold">
+                Wireless bras that feel made for you
+            </h1>
+            <p>
+                Innovative Wireless Bras that you won’t want to rip off at the end of the day. With styles & sizes up to 44H! 
+            </p>
+            <div>
+                <button>
+                    <a href="#">
+                        Shop all bras
+                    </a>
+                </button>
+                <button>
+                    <a href="#">
+                        Shop all bras
+                    </a>
+                </button>
+            </div>
+        </div>
     </div>
 </section>
 
+<style>
+    #image-banner-img{
+        background: url("{{ 'lifestyle.svg' | asset_url }}");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width:100vw;
+        height:70vh;
+    }
+</style>
 {% schema %}
 {
     "name": "Image banner",
