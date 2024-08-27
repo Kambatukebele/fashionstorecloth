@@ -39,6 +39,7 @@
     },
     "image_banner_QrpCq7": {
       "type": "image-banner",
+<<<<<<< HEAD
       "blocks": {
         "heading_BWYyTa": {
           "type": "heading",
@@ -77,6 +78,9 @@
         "color_bg_box_content": "#000000",
         "select_box_content_position": "items-center",
         "select_box_position": "top-1\/2 left-0 -translate-y-1\/2"
+=======
+      "settings": {
+>>>>>>> 3006c6707f2f462fecaaf406864f52582a882196
       }
     }
   },
