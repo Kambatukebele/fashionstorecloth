@@ -1,23 +1,30 @@
-<section id="image-banner-img" class="">
-    <div class="container mx-auto">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-white flex flex-col justify-center items-start gap-4 h-auto w-[300px]">
-            <h1 class="text-3xl font-semibold">
-                Wireless bras that feel made for you
-            </h1>
-            <p>
-                Innovative Wireless Bras that you won’t want to rip off at the end of the day. With styles & sizes up to 44H! 
-            </p>
-            <div>
-                <button>
-                    <a href="#">
-                        Shop all bras
-                    </a>
-                </button>
-                <button>
-                    <a href="#">
-                        Shop all bras
-                    </a>
-                </button>
+{%- assign assetBackgroundIMG = 'lifestyle.svg' | asset_url -%}
+{%- assign adminBackgroundIMG = section.settings.image_picker_image_banner | image_url -%}
+<section id="image-banner-img" style="background: url('{%- if section.settings.image_picker_image_banner -%}{{- adminBackgroundIMG -}} {%- else -%} {{- assetBackgroundIMG -}} {%- endif -%}'); background-repeat: no-repeat; background-position: center; background-size: cover; width:100vw; height:70vh;" class="border">
+    <div class="container mx-auto relative h-full">  
+        <div style="background-color:{{ section.settings.color_bg_box_content }}" class="text-white flex flex-col justify-center items-start gap-4 h-auto p-4 absolute {{ section.settings.select_box_position }} w-[300px] sm:w-[400px] md:w-[550px]"> 
+            {% for block in section.blocks %}
+                {%- case block.type -%}
+                    {% when "heading" %}
+                        <h1 style="color:{{ block.settings.heading_color }}" class="text-3xl font-semibold md:text-4xl lg:text-5xl">
+                            {{- block.settings.heading_block -}}
+                        </h1>
+                    {%- when "description" -%}
+                        <p style="color:{{ block.settings.description_color }}">
+                            {{- block.settings.description_block -}}
+                        </p>
+                {%- endcase -%}                
+            {%- endfor -%}
+            <div class="flex justify-center items-center gap-2 w-full">
+                {%- for block in section.blocks -%}
+                    {%- if block.type == "buttons" -%}
+                    <button style="background-color:{{ block.settings.button_bg_color }}; color:{{ block.settings.button_text_color }}" class="flex justify-center border items-center p-3 w-full">
+                            <a href="" class="text-xs uppercase block">
+                                {{- block.settings.buttons_blocks -}}
+                            </a>
+                    </button>
+                    {%- endif -%}
+                {%- endfor -%}
             </div>
         </div>
     </div>
@@ -25,12 +32,12 @@
 
 <style>
     #image-banner-img{
-        background: url("{{ 'lifestyle.svg' | asset_url }}");
+        {% comment %} background: url("{{ 'lifestyle.svg' | asset_url }}");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         width:100vw;
-        height:70vh;
+        height:70vh; {% endcomment %}
     }
 </style>
 {% schema %}
@@ -38,8 +45,149 @@
     "name": "Image banner",
     "class": "image_banner",
     "limit": 2,
-    "settings": [],
-    "blocks": [],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image_picker_image_banner",
+            "label": "Background image",
+        },
+        {
+            "type": "color",
+            "id": "color_bg_box_content",
+            "label": "Box Background Color",
+            "default": "#000000"
+        },
+        {
+            "type": "select",
+            "id": "select_box_content_position",
+            "label": "Content box Position",
+            "options": [
+                {
+                    "label": "Start",
+                    "value": "items-start"
+                },
+                {
+                    "label": "Center",
+                    "value": "items-center"
+                }
+            ],
+            "default":  "items-center"
+        },
+        {
+            "type": "select",
+            "id": "select_box_position",
+            "label": "Box position",
+            "options": [
+                {
+                    "label": "Top left",
+                    "value": "top-0 left-0"
+                },
+                {
+                    "label": "Top center",
+                    "value": "top-0 left-1/2 -translate-x-1/2"
+                },
+                {
+                    "label": "Top right",
+                    "value": "top-0 right-0"
+                },
+                {
+                    "label": "Middle left",
+                    "value": "top-1/2 left-0 -translate-y-1/2"
+                },
+                {
+                    "label": "Middle center",
+                    "value": "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                },
+                {
+                    "label": "Middle right",
+                    "value": "top-1/2 right-0 -translate-y-1/2"
+                },
+                {
+                    "label": "Bottom left",
+                    "value": "bottom-0 left-0"
+                },
+                {
+                    "label": "Bottom center",
+                    "value": "bottom-0 left-1/2 -translate-x-1/2"
+                },
+                {
+                    "label": "Bottom right",
+                    "value": "bottom-0 right-0"
+                }
+            ],
+            "default": "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Heading",
+            "type": "heading",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading_block",
+                    "label": "heading",
+                    "default": "Welcome to our store"
+                },
+                {
+                    "type": "color",
+                    "id": "heading_color",
+                    "label": "Heading color",
+                    "default":"#ffffff"
+                }
+            ]
+        },
+        {
+            "name": "description",
+            "type": "description",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "inline_richtext",
+                    "id": "description_block",
+                    "label": "Description",
+                    "default": "This is the description"
+                },
+                {
+                    "type": "color",
+                    "id": "description_color",
+                    "label": "Description color",
+                    "default":"#ffffff"
+                }
+            ]
+        },
+        {
+            "name": "buttons",
+            "type": "buttons",
+            "limit": 2,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "buttons_blocks",
+                    "label": "Button text",
+                    "default": "Shop now"
+                },
+                {
+                    "type": "url",
+                    "id": "buttons_url",
+                    "label": "Button URL"
+                },
+                {
+                    "type": "color",
+                    "id": "button_bg_color",
+                    "label": "Button background Color",
+                    "default":"#000000"
+                },
+                {
+                    "type": "color",
+                    "id": "button_text_color",
+                    "label": "Button Text Color",
+                    "default":"#ffffff"
+                }
+            ]   
+        }
+    ],
     "presets": [
         {
             "name": "Image banner"
