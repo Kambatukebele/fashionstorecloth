@@ -5,7 +5,7 @@
         </h2>
     </div>
 </section>
-<section class="w-full h-fit py-5 lg:py-10">
+<section class="w-full h-fit py-5">
     <div class="flex overflow-x-auto h-[300px] xl:h-[400px]">
         {%- if section.settings.featured_collection_collection_list != blank -%}
             {%- for collection in section.settings.featured_collection_collection_list -%}
@@ -34,7 +34,6 @@
         {%- endif -%}
     </div>
 </section>
-{{ section.settings.featured_collection_collection_list }}
 {% schema %}
 {
     "name": "Featured collection",
