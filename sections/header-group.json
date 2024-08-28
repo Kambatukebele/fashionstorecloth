@@ -39,32 +39,37 @@
     },
     "image_banner_QrpCq7": {
       "type": "image-banner",
-<<<<<<< HEAD
       "blocks": {
         "heading_BWYyTa": {
           "type": "heading",
           "settings": {
-            "heading_block": "The 2x sell-out bra"
+            "heading_block": "The 2x sell-out bra",
+            "heading_color": "#ffffff"
           }
         },
         "description_78Bjbn": {
           "type": "description",
           "settings": {
-            "description_block": "The bra everyone should have. Get it now before it’s gone again."
+            "description_block": "The bra everyone should have. Get it now before it’s gone again.",
+            "description_color": "#ffffff"
           }
         },
         "buttons_Ch8FMf": {
           "type": "buttons",
           "settings": {
             "buttons_blocks": "shop&onlybras",
-            "buttons_url": ""
+            "buttons_url": "",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff"
           }
         },
         "buttons_p8zt6p": {
           "type": "buttons",
           "settings": {
             "buttons_blocks": "Shop all bras",
-            "buttons_url": ""
+            "buttons_url": "",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff"
           }
         }
       },
@@ -78,15 +83,67 @@
         "color_bg_box_content": "#000000",
         "select_box_content_position": "items-center",
         "select_box_position": "top-1\/2 left-0 -translate-y-1\/2"
-=======
+      }
+    },
+    "featured_collection_MQ7HcL": {
+      "type": "featured-collection",
       "settings": {
->>>>>>> 3006c6707f2f462fecaaf406864f52582a882196
+        "featured_collection_title": "Feactured collection",
+        "featured_collection_collection_list": [
+          "adidas",
+          "asics-tiger",
+          "converse",
+          "dr-martens",
+          "flex-fit",
+          "herschel",
+          "frontpage",
+          "men",
+          "nike",
+          "palladuim",
+          "puma",
+          "sale",
+          "supra",
+          "timberland",
+          "vans",
+          "women",
+          "kid"
+        ]
+      }
+    },
+    "image_banner_Cz4LNP": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_ynGHdw": {
+          "type": "heading",
+          "settings": {
+            "heading_block": "Welcome to our store",
+            "heading_color": "#ffffff"
+          }
+        },
+        "description_9bii7C": {
+          "type": "description",
+          "settings": {
+            "description_block": "This is the description",
+            "description_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ynGHdw",
+        "description_9bii7C"
+      ],
+      "settings": {
+        "color_bg_box_content": "#000000",
+        "select_box_content_position": "items-center",
+        "select_box_position": "top-1\/2 left-1\/2 -translate-x-1\/2 -translate-y-1\/2"
       }
     }
   },
   "order": [
     "announcement-bar",
     "header_gQEXUX",
-    "image_banner_QrpCq7"
+    "image_banner_QrpCq7",
+    "featured_collection_MQ7HcL",
+    "image_banner_Cz4LNP"
   ]
 }
