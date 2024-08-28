@@ -1,0 +1,48 @@
+<section style="background-color: {{ section.settings.text_field_background }}; color: {{ section.settings.text_field_color_text }}" class="w-full py-5 h-96 sm:h-72 relative">
+    <div class="container mx-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div class="min-w-56 mx-auto flex flex-col justify-center items-center gap-2 px-2 sm:px-4 xl:max-w-[850px]">
+            <p class="text-sm font-semibold">{{ section.settings.text_field_title }}</p>
+            <h4 class="text-2xl text-center">
+                {{ section.settings.text_field_description }}
+            </h4>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Text Field",
+    "settings": [
+        {
+            "type": "color",
+            "id": "text_field_background",
+            "label": "Background color",
+            "default":"#000000"
+        },
+        {
+            "type": "color",
+            "id": "text_field_color_text",
+            "label": "Text color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "text",
+            "id": "text_field_title",
+            "label": "Title",
+            "placeholder": "Enter your title",
+            "default": "Your text here"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "text_field_description",
+            "label": "Description",
+            "default": "This is a description"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Text field"
+        }
+    ]
+}   
+{% endschema %}
