@@ -146,6 +146,132 @@
         "select_box_content_position": "items-center",
         "select_box_position": "top-1\/2 left-1\/2 -translate-x-1\/2 -translate-y-1\/2"
       }
+    },
+    "collection_product_Txgj8P": {
+      "type": "collection-product",
+      "settings": {
+        "collection_product_title": "Men",
+        "collection_product_collection_list": "men"
+      }
+    },
+    "image_banner_AFXrar": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_xGCryx": {
+          "type": "heading",
+          "settings": {
+            "heading_block": "Welcome to our store",
+            "heading_color": "#ffffff"
+          }
+        },
+        "description_pmENrP": {
+          "type": "description",
+          "settings": {
+            "description_block": "This is the description",
+            "description_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xGCryx",
+        "description_pmENrP"
+      ],
+      "settings": {
+        "color_bg_box_content": "#000000",
+        "select_box_content_position": "items-center",
+        "select_box_position": "top-1\/2 left-1\/2 -translate-x-1\/2 -translate-y-1\/2"
+      }
+    },
+    "collection_product_NGg6kY": {
+      "type": "collection-product",
+      "settings": {
+        "collection_product_title": "Women collection",
+        "collection_product_collection_list": "women"
+      }
+    },
+    "image_banner_Md9bQB": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_BXW9My": {
+          "type": "heading",
+          "settings": {
+            "heading_block": "Welcome to our store",
+            "heading_color": "#ffffff"
+          }
+        },
+        "description_Pepa4B": {
+          "type": "description",
+          "settings": {
+            "description_block": "This is the description",
+            "description_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BXW9My",
+        "description_Pepa4B"
+      ],
+      "settings": {
+        "color_bg_box_content": "#000000",
+        "select_box_content_position": "items-center",
+        "select_box_position": "top-1\/2 left-1\/2 -translate-x-1\/2 -translate-y-1\/2"
+      }
+    },
+    "collection_product_j47zKY": {
+      "type": "collection-product",
+      "settings": {
+        "collection_product_title": "Kid collection",
+        "collection_product_collection_list": "kid"
+      }
+    },
+    "image_banner_Q8QGQE": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_3BfJQE": {
+          "type": "heading",
+          "settings": {
+            "heading_block": "Welcome to our store",
+            "heading_color": "#ffffff"
+          }
+        },
+        "description_J83h6x": {
+          "type": "description",
+          "settings": {
+            "description_block": "This is the description",
+            "description_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3BfJQE",
+        "description_J83h6x"
+      ],
+      "settings": {
+        "color_bg_box_content": "#000000",
+        "select_box_content_position": "items-center",
+        "select_box_position": "top-1\/2 left-1\/2 -translate-x-1\/2 -translate-y-1\/2"
+      }
+    },
+    "collection_product_ydJHRH": {
+      "type": "collection-product",
+      "settings": {
+        "collection_product_title": "Addidas collection",
+        "collection_product_collection_list": "adidas"
+      }
+    },
+    "text_field_Gp7pdg": {
+      "type": "text-field",
+      "settings": {
+        "text_field_background": "#000000",
+        "text_field_color_text": "#ffffff",
+        "text_field_title": "WE'RE REDEFINING INTIMATES",
+        "text_field_description": "At Knix, we believe that everyone should be able to live unapologetically free.<em>Free<\/em> from judgment. <em>Free<\/em> from self-doubt. <em>Free<\/em> to be yourself."
+      }
+    },
+    "text_image_KWFBeP": {
+      "type": "text-image",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -153,6 +279,15 @@
     "header_gQEXUX",
     "image_banner_QrpCq7",
     "featured_collection_MQ7HcL",
-    "image_banner_Cz4LNP"
+    "image_banner_Cz4LNP",
+    "collection_product_Txgj8P",
+    "image_banner_AFXrar",
+    "collection_product_NGg6kY",
+    "image_banner_Md9bQB",
+    "collection_product_j47zKY",
+    "image_banner_Q8QGQE",
+    "collection_product_ydJHRH",
+    "text_field_Gp7pdg",
+    "text_image_KWFBeP"
   ]
 }
