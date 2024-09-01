@@ -1,4 +1,4 @@
-<header style="background: {{ section.settings.color_scheme_header_id.settings.color_background_header_id }}; color: {{ section.settings.color_scheme_header_id.settings.color_header_id }}" class="w-full h-fit relative py-5 border">
+<header style="background: {{ section.settings.color_scheme_header_id.settings.color_background_header_id }}; color: {{ section.settings.color_scheme_header_id.settings.color_header_id }}" class="w-full h-fit relative py-5 border z-50">
     <nav class="container flex justify-between items-center px-2 {% if section.settings.select_header_position == "lg:flex-wrap" %} {{ section.settings.select_header_position }} {% endif %}">
         <a href="{{ shop.url }}" class="{% if section.settings.select_header_position == "lg:flex-wrap" %} lg:w-full lg:flex lg:justify-center lg:mb-10 {% else %} lg:w-[200px] lg:block {% endif %}">
             {%- if settings.logo_image -%}
@@ -24,7 +24,7 @@
                 {%- endfor -%}
             </ul>
         </div>
-        <div class="hidden xl:flex xl:justify-around xl:items-center border xl:rounded-2xl xl:w-52 xl:py-1 xl:bg-gray-100 xl:order-none ">
+        <div class="hidden xl:flex xl:justify-around xl:items-center border xl:rounded-3xl xl:w-52 xl:py-2 xl:bg-gray-100 xl:order-none">
             <span>{%-  render "icon-search" -%}</span>
             <input class="xl:w-40 bg-gray-100 text-sm outline-none" type="search" placeholder="Search" >
         </div>
@@ -53,6 +53,7 @@
 {
     "name": "Header",
     "class": "header",
+    "disabled_on": {"groups": ["footer"]},
     "settings": [
         {
             "type": "link_list",
