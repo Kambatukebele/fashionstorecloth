@@ -800,6 +800,9 @@ video {
 .h-\[420px\] {
   height: 420px;
 }
+.h-\[42px\] {
+  height: 42px;
+}
 .h-auto {
   height: auto;
 }
@@ -812,9 +815,6 @@ video {
 }
 .h-screen {
   height: 100vh;
-}
-.h-\[42px\] {
-  height: 42px;
 }
 .w-5 {
   width: 20px;
@@ -831,6 +831,9 @@ video {
 .w-\[12px\] {
   width: 12px;
 }
+.w-\[146px\] {
+  width: 146px;
+}
 .w-\[17px\] {
   width: 17px;
 }
@@ -839,6 +842,9 @@ video {
 }
 .w-\[20px\] {
   width: 20px;
+}
+.w-\[280px\] {
+  width: 280px;
 }
 .w-\[300px\] {
   width: 300px;
@@ -858,11 +864,8 @@ video {
 .w-full {
   width: 100%;
 }
-.w-\[146px\] {
-  width: 146px;
-}
-.w-\[280px\] {
-  width: 280px;
+.w-10\/12 {
+  width: 83.333333%;
 }
 .min-w-56 {
   min-width: 224px;
@@ -1693,6 +1696,14 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.bg-green-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
+}
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
 .decoration-slice {
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
@@ -2327,16 +2338,8 @@ video {
 }
 @media (min-width: 640px) {
 
-  .sm\:h-36 {
-    height: 144px;
-  }
-
   .sm\:h-5 {
     height: 20px;
-  }
-
-  .sm\:h-80 {
-    height: 320px;
   }
 
   .sm\:h-72 {
@@ -2364,6 +2367,14 @@ video {
 
   .md\:w-\[550px\] {
     width: 550px;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:text-4xl {
@@ -2448,8 +2459,8 @@ video {
     width: 100%;
   }
 
-  .lg\:max-w-\[700px\] {
-    max-width: 700px;
+  .lg\:max-w-96 {
+    max-width: 384px;
   }
 
   .lg\:translate-x-0 {
@@ -2479,11 +2490,6 @@ video {
 
   .lg\:justify-between {
     justify-content: space-between;
-  }
-
-  .lg\:bg-red-400 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(248 113 113 / var(--tw-bg-opacity));
   }
 
   .lg\:px-0 {
@@ -2548,14 +2554,6 @@ video {
 
   .xl\:w-\[450px\] {
     width: 450px;
-  }
-
-  .xl\:max-w-\[900px\] {
-    max-width: 900px;
-  }
-
-  .xl\:max-w-\[1000px\] {
-    max-width: 1000px;
   }
 
   .xl\:max-w-\[850px\] {
