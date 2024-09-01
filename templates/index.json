@@ -1,12 +1,3 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "sections": {
     "image_banner_dehfEy": {
@@ -52,7 +43,8 @@
         "buttons_wk8WUk"
       ],
       "settings": {
-        "color_bg_box_content": "#000000",
+        "image_picker_image_banner": "shopify:\/\/shop_images\/model-poses-near-bushes.jpg",
+        "color_bg_box_content": "#121212",
         "select_box_content_position": "items-start",
         "select_box_position": "top-1\/2 left-0 -translate-y-1\/2"
       }
@@ -60,17 +52,25 @@
     "featured_collection_b4a9EU": {
       "type": "featured-collection",
       "settings": {
-        "featured_collection_title": "Feactured collection",
+        "featured_collection_title": "Our collections",
         "featured_collection_collection_list": [
-
+          "adidas",
+          "asics-tiger",
+          "converse",
+          "dr-martens",
+          "flex-fit",
+          "herschel",
+          "nike",
+          "palladuim",
+          "puma"
         ]
       }
     },
     "collection_product_XDN673": {
       "type": "collection-product",
       "settings": {
-        "collection_product_title": "Feactured collection",
-        "collection_product_collection_list": ""
+        "collection_product_title": "Addidas collection",
+        "collection_product_collection_list": "adidas"
       }
     },
     "text_image_LEKVCM": {
@@ -90,8 +90,8 @@
     "collection_product_rkiczF": {
       "type": "collection-product",
       "settings": {
-        "collection_product_title": "Feactured collection",
-        "collection_product_collection_list": ""
+        "collection_product_title": "van's collection",
+        "collection_product_collection_list": "vans"
       }
     },
     "text_field_xKTXVd": {
