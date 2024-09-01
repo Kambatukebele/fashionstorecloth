@@ -3,7 +3,6 @@ window.onload = (event) => {
     const ANNOUNCEMENT_BAR = document.querySelectorAll('.announcement');
     
     let currentIndex = 0;
-    console.log((ANNOUNCEMENT_BAR));
     if (ANNOUNCEMENT_BAR.length !== 1) {    
         const SLIDE_ANNOUNCEMENTS = () => {
             const CURRENT = ANNOUNCEMENT_BAR[currentIndex];
