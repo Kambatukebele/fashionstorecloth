@@ -1,6 +1,14 @@
 {
   "type": "footer",
   "name": "Footer Group",
-  "sections": {},
-  "order": []
+  "sections": {
+    "footer_RXC4Np": {
+      "type": "footer",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "footer_RXC4Np"
+  ]
 }
