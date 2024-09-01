@@ -1,12 +1,12 @@
-<section class="w-full h-fit py-5">
+<section class="w-full h-fit py-5 lg:py-10">
     <div class="container mx-auto flex flex-col gap-4">
         <h2 class="w-full text-start text-2xl font-semibold">
            {{ section.settings.featured_collection_title }}
         </h2>
     </div>
 </section>
-<section class="w-full h-fit py-5">
-    <div class="flex overflow-x-auto h-[300px] xl:h-[400px]">
+<section class="w-full h-fit py-5 lg:py-10">
+    <div class="flex overflow-x-auto hide-scrollbar h-[300px] xl:h-[400px]">
         {%- if section.settings.featured_collection_collection_list != blank -%}
             {%- for collection in section.settings.featured_collection_collection_list -%}
                 <a href="{{ collection.url }}" class="w-72 h-72 xl:w-96 xl:h-96 mx-auto shadow flex justify-center items-center flex-col gap-4 mr-4">

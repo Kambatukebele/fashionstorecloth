@@ -1,7 +1,8 @@
 {%- assign assetBackgroundIMG = 'lifestyle.svg' | asset_url -%}
 {%- assign adminBackgroundIMG = section.settings.image_picker_image_banner | image_url -%}
-<section id="image-banner-img" style="background: url('{%- if section.settings.image_picker_image_banner -%}{{- adminBackgroundIMG -}} {%- else -%} {{- assetBackgroundIMG -}} {%- endif -%}'); background-repeat: no-repeat; background-position: center; background-size: cover; width:100vw; height:70vh;" class="border">
+<section id="image-banner-img" style="background: url('{%- if section.settings.image_picker_image_banner -%}{{- adminBackgroundIMG -}} {%- else -%} {{- assetBackgroundIMG -}} {%- endif -%}'); background-repeat: no-repeat; background-position: center; background-size: contain; width:100%; height:70vh;" class="">
     <div class="container mx-auto relative h-full">  
+        {%- if section.blocks.size > 0 -%}
         <div style="background-color:{{ section.settings.color_bg_box_content }}" class="text-white flex flex-col justify-center items-start gap-4 h-auto p-4 absolute {{ section.settings.select_box_position }} w-[300px] sm:w-[400px] md:w-[550px]"> 
             {% for block in section.blocks %}
                 {%- case block.type -%}
@@ -27,6 +28,7 @@
                 {%- endfor -%}
             </div>
         </div>
+        {%- endif -%}
     </div>
 </section>
 
