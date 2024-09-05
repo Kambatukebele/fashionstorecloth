@@ -1,7 +1,11 @@
 <section class="w-full h-fit py-5 lg:py-10">
     <div class="container mx-auto flex justify-center items-center flex-col gap-4 md:flex-row">
         <div class="w-10/12 mx-auto md:w-1/2">
-            <img class="w-full h-full object-contain object-center" src="{{ 'collection-2.svg' | asset_url }}">
+            {%- if section.settings.text_image_picker != blank -%}
+                {{ section.settings.text_image_picker | image_url: width: master | image_tag }}
+                {%- else -%}
+                <img class="w-full h-full object-contain object-center" src="{{ 'collection-2.svg' | asset_url }}">
+            {%- endif -%}
         </div>
         <div class="w-10/12 mx-auto flex flex-col justify-center items-start gap-2 md:w-1/2">
             <h3 class="text-2xl font-semibold">Shop in Store</h3>
@@ -21,7 +25,13 @@
     "disabled_on": {
         "groups": ["header", "footer"]
     },
-    "settings": [],
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "text_image_picker",
+            "label": "Image"
+        }
+    ],
     "presets": [
         {
             "name": "Text image"
