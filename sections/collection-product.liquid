@@ -1,11 +1,11 @@
-<section class="w-full h-fit py-5 lg:py-10">
+<section class="w-full h-fit py-5">
     <div class="container mx-auto flex flex-col gap-4">
         <h2 class="w-full text-start text-2xl font-semibold">
            {{ section.settings.collection_product_title }}
         </h2>
     </div>
 </section>
-<section class="w-full h-fit py-5 lg:py-10">
+<section class="w-full h-fit py-5">
     <div class="flex overflow-x-auto hide-scrollbar h-[420px] xl:h-[550px]">
         {%- if section.settings.collection_product_collection_list != blank -%}
             {%- for product in section.settings.collection_product_collection_list.products -%}
