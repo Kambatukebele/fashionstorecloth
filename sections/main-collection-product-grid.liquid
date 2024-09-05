@@ -1,0 +1,113 @@
+<section class="w-full h-fit">
+    <div class="container mx-auto">
+         {%- if collection.all_tags.size > 0 -%}
+            <div class="w-full flex justify-start items-center gap-2 overflow-x-scroll whitespace-nowrap">
+                {%- for tag in collection.all_tags -%}
+                    <span class="block border rounded-full py-2 px-4 uppercase text-xs">
+                        {{ tag }}
+                    </span>
+                {%- endfor -%}
+            </div>
+        {%- endif -%}
+    </div>
+</section>
+<section class="my-10">
+    <hr>
+</section>
+<section class="w-full h-hit py-5 lg:py-10">
+    <div class="container mx-auto">
+        {% comment %} Filter selection {% endcomment %}
+        <div class="min-w-[128px] flex justify-between items-center mx-4">
+            <div class="md:flex md:justify-center md:items-center md:gap-4">
+                <div class="flex gap-2 md:hidden">
+                    <span class="block text-xs font-light">Filter</span>
+                    {%- render "arrow-down" -%}
+                </div>
+                <div class="hidden gap-2 md:flex">
+                    <span class="block text-xs font-light">Style</span>
+                   {%- render "arrow-down" -%}
+                </div>
+                <div class="hidden gap-2 md:flex">
+                    <span class="block text-xs font-light">Absorbency</span>
+                    {%- render "arrow-down" -%}
+                </div>
+                <div class="hidden gap-2 md:flex">
+                    <span class="block text-xs font-light">Type</span>
+                    {%- render "arrow-down" -%}
+                </div>
+                <div class="hidden gap-2 md:flex">
+                    <span class="block text-xs font-light">What's it for</span>
+                    {%- render "arrow-down" -%}
+                </div>
+                <div class="hidden gap-2 md:flex">
+                    <span class="block text-xs font-light">Color</span>
+                    {%- render "arrow-down" -%}
+                </div>
+                <div class="hidden gap-2 md:flex">
+                    <span class="block text-xs font-light">Fabric</span>
+                    {%- render "arrow-down" -%}
+                </div>
+            </div>
+            {% comment %} Sort by {% endcomment %}
+            <div class="flex justify-center items-center gap-2">
+                <div>
+                    <span class="text-xs font-light">Sort by:</span>
+                    <select class="text-xs font-light">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <div>
+                    <span class="text-xs font-light">50 items</span>
+                </div>
+            </div>
+        </div>
+        {% comment %} End Filter selection {% endcomment %}
+        {% comment %} Filter card {% endcomment %}
+        <div class="bg-gray-100 hidden fixed top-0 left-0 right-0 bottom-0 z-50  flex-col justify-start items-center gap-4 w-full py-10">
+            <div class="w-[280px] sm:w-[600px] mx-auto border shadow-2xl py-6 px-4">
+                <div class="flex justify-between items-center mb-4 w-full">
+                    <h5 class="text-2xl font-semibold">Filters</h5>
+                    <h6 class="text-xs font-light hover:underline"s>Clear All</h6>
+                </div>
+                <div class="w-full mb-4">
+                    <div class="">
+                        <div class="flex justify-between items-center mb-2">
+                            <h5 class="text-xl font-semibold">Style</h5>
+                            <span class="block">{%- render "arrow-down" -%}</span>
+                        </div>
+                        <div class="">
+                            <input type="checkbox">
+                            <span class="text-xs font-lights">Swim</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full mb-4">
+                    <span class="text-base font-semibold">50 items</span>
+                    <button class="py-2 px-4 border text-sm bg-red-900 text-white">Appli</button>
+                </div>
+            </div>   
+        </div>
+        {% comment %} End Filter card {% endcomment %}
+        {% comment %} Product Grid {% endcomment %}
+        <div class="w-full my-5 grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+            {%- for item in (1..12) -%}
+                <div class="w-full border">
+                    <div class="min-w-[144px] min-h-[186xpx] border mb-2">
+                        <img class="w-full h-full object-contain object-center" src="{{ 'collection-2.svg' | asset_url }}">
+                    </div>
+                    <div class="h-fit w-full flex flex-col justify-center items-start gap-4">
+                        <h3 class="text-base font-semibold">Title</h3>
+                        <h6 class="text-xs font-light">Price</h6>
+                        <div>
+                            <span class="bg-red-600 w-4 h-4 block rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+        {% comment %}End Product Grid {% endcomment %}
+    </div>
+</section>
