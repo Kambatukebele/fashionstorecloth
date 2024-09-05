@@ -1,6 +1,17 @@
-<section>
-    <div>
-        <h1>Main collection banner</h1>
+<section class="w-full h-fit py-5 lg:py-10">
+    <div class="container mx-auto">
+        <div class="flex flex-col justify-center items-start mx-4 gap-4">
+            <p class="text-xs font-light">
+                <a href="{{ shop.url }}">Home</a> /
+                <span>{{ collection.title }}</span>
+            </p>
+            <div>
+                <h2 class="text-2xl font-semibold">{{ collection.title }}</h2>
+                <p class="text-sm font-light">
+                    {{ collection.description }}
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -8,7 +19,9 @@
 {
     "name": "Main collection banner",
     "disabled_on": {"groups": ["header", "footer"]},
-    "settings": [],
+    "settings": [
+        
+    ],
     "blocks": [],
     "presets": [
         {"name": "Main collection banner"}
