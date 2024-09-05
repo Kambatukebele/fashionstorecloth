@@ -93,19 +93,19 @@
         {% comment %} End Filter card {% endcomment %}
         {% comment %} Product Grid {% endcomment %}
         <div class="w-full my-5 grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
-            {%- for item in (1..12) -%}
-                <div class="w-full border">
-                    <div class="min-w-[144px] min-h-[186xpx] border mb-2">
-                        <img class="w-full h-full object-contain object-center" src="{{ 'collection-2.svg' | asset_url }}">
+            {%- for product in collection.products -%}
+                <a href="{{ product.url }}" class="w-full shadow">
+                    <div class="min-w-[144px] min-h-[186xpx] mb-2">
+                        <img class="w-full h-full object-contain object-center" src="{{ product.featured_image | image_url }}">
                     </div>
                     <div class="h-fit w-full flex flex-col justify-center items-start gap-4">
-                        <h3 class="text-base font-semibold">Title</h3>
-                        <h6 class="text-xs font-light">Price</h6>
-                        <div>
+                        <h3 class="text-base font-semibold mx-2">{{ product.title }}</h3>
+                        <h6 class="text-xs font-light mx-2">{{ product.price | money }}</h6>
+                        <div class="mx-2">
                             <span class="bg-red-600 w-4 h-4 block rounded-full"></span>
                         </div>
                     </div>
-                </div>
+                </a>
             {%- endfor -%}
         </div>
         {% comment %}End Product Grid {% endcomment %}
