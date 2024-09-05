@@ -1,52 +1,138 @@
-<footer class="w-full h-fit py-5 lg:py-10">
+<footer style="background:{{ section.settings.footer_color_scheme.settings.color_background_footer_id }}; color:{{ section.settings.footer_color_scheme.settings.color_footer_id }}" class="w-full h-fit py-5 lg:py-10">
     <div class="container mx-auto lg:flex">
-        {%- for i in (1..3) -%}
-            <div class="min-w-[180px] h-full mx-4 lg:mx-0 lg:w-1/2">
-                <div class="w-full py-5 flex justify-between items-center showHideSubFooter">
-                    <h5 class="uppercase text-sm font-semibold md:text-base">Customer care</h5>
-                    <span class="lg:hidden">
-                        {% render "arrow-down" %}
-                    </span>
+        {%- for menu in section.blocks -%}
+            {%- case menu.type -%}
+                {%- when "footer_menu" -%}
+                <div class="min-w-[180px] h-full mx-4 lg:mx-0 lg:w-1/2">
+                    <div class="w-full py-5 flex justify-between items-center showHideSubFooter">
+                        <h5 class="uppercase text-sm font-semibold md:text-base">
+                            {{ menu.settings.title_footer_menu }}
+                        </h5>
+                        <span class="lg:hidden">
+                            {% render "arrow-down" %}
+                        </span>
+                    </div>
+                    <div class="hidden footerText lg:block">
+                        <p class="text-sm font-normal my-2 lg:my-5">
+                            <a href="">{{ menu.settings.submenu_footer_menu_one }}</a>
+                        </p>
+                        <p class="text-sm font-normal my-2 lg:my-5">
+                            <a href="">{{ menu.settings.submenu_footer_menu_two }}</a>
+                        </p>
+                        <p class="text-sm font-normal my-2 lg:my-5">
+                            <a href="">{{ menu.settings.submenu_footer_menu_three }}</a>
+                        </p>
+                        <p class="text-sm font-normal my-2 lg:my-5">
+                            <a href="">{{ menu.settings.submenu_footer_menu_four }}</a>
+                        </p>
+                        <p class="text-sm font-normal my-2 lg:my-5">
+                            <a href="">{{ menu.settings.submenu_footer_menu_five }}</a>
+                        </p>
+                        <p class="text-sm font-normal my-2 lg:my-5">
+                            <a href="">{{ menu.settings.submenu_footer_menu_six }}</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="hidden footerText lg:block">
-                    <p class="text-sm font-normal my-2 lg:my-5">
-                        <a href="">Contact us</a>
-                    </p>
-                    <p class="text-sm font-normal my-2 lg:my-5">
-                        <a href="">Contact us</a>
-                    </p>
-                    <p class="text-sm font-normal my-2 lg:my-5">
-                        <a href="">Contact us</a>
-                    </p>
-                    <p class="text-sm font-normal my-2 lg:my-5">
-                        <a href="">Contact us</a>
-                    </p>
-                    <p class="text-sm font-normal my-2 lg:my-5">
-                        <a href="">Contact us</a>
-                    </p>
-                </div>
-            </div>
+            {%- endcase -%}
         {% endfor %}
         <form class="min-[180px] mx-auto my-4">
-            <h4 class="text-2xl font-semibold text-center mb-4">Stay in the flow</h4>
+            <h4 class="text-2xl font-semibold text-center mb-4">{{ section.settings.footer_subscribe_form }}</h4>
             <div class="min-[180px] flex justify-between mx-4 p-2 border">
                 <input type="email" class="min-[180px] pl-2 text-xs border-none bg-transparent outline-none" placeholder="E-mail Address">
-                <button type="submit" class="w-[85px] h-[32px] bg-red-500 text-white">Submit</button>
+                <button type="submit" class="h-[32px] px-4 bg-red-500 text-white">
+                    {%- if section.settings.footer_subscribe_form_btn != blank -%}
+                        {{ section.settings.footer_subscribe_form_btn }}
+                        {%- else -%}
+                        submit
+                    {%- endif -%}
+                </button>
             </div>
         </form>
     </div>
 </footer>
 <script src="{{ 'footer_collapse.js' | asset_url }}" defer></script>
 
-
 {% schema %}
 {
     "name": "Footer",
     "limit": 1,
-    "blocks": [],
+    "blocks": [
+        {
+            "name": "Footer menu",
+            "type": "footer_menu",
+            "limit": 3,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title_footer_menu",
+                    "label": "Title",
+                    "default": "Title here",
+                    "placeholder": "Enter a footer title"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "submenu_footer_menu_one",
+                    "label": "Submenu 1",
+                    "default": "submenu 1"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "submenu_footer_menu_two",
+                    "label": "Submenu 2",
+                    "default": "submenu 2"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "submenu_footer_menu_three",
+                    "label": "Submenu 3",
+                    "default": "submenu 3"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "submenu_footer_menu_four",
+                    "label": "Submenu 4",
+                    "default": "submenu 4"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "submenu_footer_menu_five",
+                    "label": "Submenu 5",
+                    "default": "submenu 5"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "submenu_footer_menu_six",
+                    "label": "Submenu 6",
+                    "default": "submenu 6"
+                }
+            ]
+        }
+    ],
     "class": "footer",
     "disabled_on": {"groups": ["header"]},
-    "settings": [],
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "footer_color_scheme",
+            "label": "Background color",
+        },
+        {
+            "type": "header",
+            "content": "This is the title for the subscribe form"
+        },
+        {
+            "type": "text",
+            "id": "footer_subscribe_form",
+            "label": "Subscribe form",
+            "default": "Subscribe"
+        },
+        {
+            "type": "text",
+            "id": "footer_subscribe_form_btn",
+            "label": "Button text",
+            "default": "Subscribe"
+        }
+    ],
     "presets": [{"name": "Footer"}]
 }
 {% endschema %}
