@@ -1,19 +1,56 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "type": "footer",
   "name": "Footer Group",
   "sections": {
     "footer_RXC4Np": {
       "type": "footer",
+      "blocks": {
+        "footer_menu_cMAbKn": {
+          "type": "footer_menu",
+          "settings": {
+            "title_footer_menu": "customer care",
+            "submenu_footer_menu_one": "Contact Us",
+            "submenu_footer_menu_two": "Returns & Exchanges",
+            "submenu_footer_menu_three": "Shipping",
+            "submenu_footer_menu_four": "Product Testing and safety",
+            "submenu_footer_menu_five": "FAQ's",
+            "submenu_footer_menu_six": "Gift Card Balance"
+          }
+        },
+        "footer_menu_i6wTqR": {
+          "type": "footer_menu",
+          "settings": {
+            "title_footer_menu": "toolls & services",
+            "submenu_footer_menu_one": "Rewards",
+            "submenu_footer_menu_two": "Size Guides",
+            "submenu_footer_menu_three": "Vitual Fittings",
+            "submenu_footer_menu_four": "Store Locations",
+            "submenu_footer_menu_five": "Retails Partners",
+            "submenu_footer_menu_six": "submenu 6"
+          }
+        },
+        "footer_menu_9eEjdA": {
+          "type": "footer_menu",
+          "settings": {
+            "title_footer_menu": "about coconut",
+            "submenu_footer_menu_one": "Story & Mission",
+            "submenu_footer_menu_two": "Sustainability & Philanthropy",
+            "submenu_footer_menu_three": "Supply Chain Compliance",
+            "submenu_footer_menu_four": "Community",
+            "submenu_footer_menu_five": "Careers",
+            "submenu_footer_menu_six": ""
+          }
+        }
+      },
+      "block_order": [
+        "footer_menu_cMAbKn",
+        "footer_menu_i6wTqR",
+        "footer_menu_9eEjdA"
+      ],
       "settings": {
+        "footer_color_scheme": "",
+        "footer_subscribe_form": "Subscribe",
+        "footer_subscribe_form_btn": "Subscribe"
       }
     }
   },

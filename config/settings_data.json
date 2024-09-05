@@ -2,6 +2,8 @@
   "current": {
     "logo_image": "shopify:\/\/shop_images\/coconut_r_b3207b83-bd85-4355-929f-480f6dac0d50.png",
     "logo_size": 88,
+    "font_picker_heading": "americana_n4",
+    "font_picker_body": "americana_n4",
     "content_for_index": [
 
     ],
@@ -11,7 +13,7 @@
           "color_background_announcement_bar_id": "#000000",
           "color_announcement_bar_id": "#ffffff",
           "color_background_header_id": "#ffffff",
-          "color_header_id": "#000000",
+          "color_header_id": "#374151",
           "color_background_footer_id": "#000000",
           "color_footer_id": "#ffffff",
           "background": "#ffffff",

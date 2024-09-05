@@ -6,27 +6,18 @@
         "heading_VTL3yr": {
           "type": "heading",
           "settings": {
-            "heading_block": "Welcome to our store",
-            "heading_color": "#ffffff"
+            "heading_block": "40,000+  5-star reviews",
+            "heading_color": "#111827"
           }
         },
         "description_h8ffAN": {
           "type": "description",
           "settings": {
-            "description_block": "This is the description",
-            "description_color": "#ffffff"
+            "description_block": "<strong>Coconut<\/strong> is the #1 Leakproof Brand in North America. And you can’t go wrong with our best-selling sniker.",
+            "description_color": "#374151"
           }
         },
         "buttons_MF4A9Y": {
-          "type": "buttons",
-          "settings": {
-            "buttons_blocks": "Shop now",
-            "buttons_url": "",
-            "button_bg_color": "#000000",
-            "button_text_color": "#ffffff"
-          }
-        },
-        "buttons_wk8WUk": {
           "type": "buttons",
           "settings": {
             "buttons_blocks": "Shop now",
@@ -39,12 +30,13 @@
       "block_order": [
         "heading_VTL3yr",
         "description_h8ffAN",
-        "buttons_MF4A9Y",
-        "buttons_wk8WUk"
+        "buttons_MF4A9Y"
       ],
       "settings": {
-        "image_picker_image_banner": "shopify:\/\/shop_images\/model-poses-near-bushes.jpg",
-        "color_bg_box_content": "#121212",
+        "image_picker_image_banner": "shopify:\/\/shop_images\/shoe.webp",
+        "color_bg_box_content": "00FFFFFF",
+        "select_height_control": 80,
+        "select_border_radius": "rounded-3xl",
         "select_box_content_position": "items-start",
         "select_box_position": "top-1\/2 left-0 -translate-y-1\/2"
       }
@@ -52,18 +44,55 @@
     "featured_collection_b4a9EU": {
       "type": "featured-collection",
       "settings": {
-        "featured_collection_title": "Our collections",
+        "featured_collection_title": "Shop by Collection",
         "featured_collection_collection_list": [
-          "adidas",
-          "asics-tiger",
-          "converse",
-          "dr-martens",
-          "flex-fit",
-          "herschel",
-          "nike",
-          "palladuim",
-          "puma"
+          "men",
+          "women",
+          "kid",
+          "vans",
+          "adidas"
         ]
+      }
+    },
+    "image_banner_t7Uhce": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_TnXcGf": {
+          "type": "heading",
+          "settings": {
+            "heading_block": "Soft that makes a statement",
+            "heading_color": "#000000"
+          }
+        },
+        "description_g7Vjr9": {
+          "type": "description",
+          "settings": {
+            "description_block": "Ultimate comfort bras & undies with a signature touch.",
+            "description_color": "#000000"
+          }
+        },
+        "buttons_JhqGYj": {
+          "type": "buttons",
+          "settings": {
+            "buttons_blocks": "Shop now",
+            "buttons_url": "",
+            "button_bg_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TnXcGf",
+        "description_g7Vjr9",
+        "buttons_JhqGYj"
+      ],
+      "settings": {
+        "image_picker_image_banner": "shopify:\/\/shop_images\/shoe2.webp",
+        "color_bg_box_content": "",
+        "select_height_control": 80,
+        "select_border_radius": "rounded-3xl",
+        "select_box_content_position": "items-center",
+        "select_box_position": "top-1\/2 left-0 -translate-y-1\/2"
       }
     },
     "collection_product_XDN673": {
@@ -73,18 +102,19 @@
         "collection_product_collection_list": "adidas"
       }
     },
-    "text_image_LEKVCM": {
-      "type": "text-image",
-      "settings": {
-      }
-    },
     "text_field_3RtFDa": {
       "type": "text-field",
       "settings": {
-        "text_field_background": "#000000",
-        "text_field_color_text": "#ffffff",
-        "text_field_title": "Your text here",
-        "text_field_description": "This is a description"
+        "text_field_background": "#cce0d9",
+        "text_field_color_text": "#222222",
+        "text_field_title": "WE'RE REDEFINING INTIMATES",
+        "text_field_description": "<strong>At Coconut, we believe that everyone should be able to live unapologetically free<\/strong>.<em>Free<\/em> f<strong>rom judgment.<\/strong> <em>Free<\/em> <strong>from self-doubt<\/strong>. <em>Free<\/em> <strong>to be yourself<\/strong>."
+      }
+    },
+    "text_image_LEKVCM": {
+      "type": "text-image",
+      "settings": {
+        "text_image_picker": "shopify:\/\/shop_images\/Image.png"
       }
     },
     "collection_product_rkiczF": {
@@ -93,30 +123,15 @@
         "collection_product_title": "van's collection",
         "collection_product_collection_list": "vans"
       }
-    },
-    "text_field_xKTXVd": {
-      "type": "text-field",
-      "settings": {
-        "text_field_background": "#000000",
-        "text_field_color_text": "#ffffff",
-        "text_field_title": "Your text here",
-        "text_field_description": "This is a description"
-      }
-    },
-    "text_image_6E8Cey": {
-      "type": "text-image",
-      "settings": {
-      }
     }
   },
   "order": [
     "image_banner_dehfEy",
     "featured_collection_b4a9EU",
+    "image_banner_t7Uhce",
     "collection_product_XDN673",
-    "text_image_LEKVCM",
     "text_field_3RtFDa",
-    "collection_product_rkiczF",
-    "text_field_xKTXVd",
-    "text_image_6E8Cey"
+    "text_image_LEKVCM",
+    "collection_product_rkiczF"
   ]
 }
