@@ -11,59 +11,42 @@
         {%- endif -%}
     </div>
 </section>
-<section class="my-10">
-    <hr>
-</section>
+{% render 'line-separator' %}
 <section class="w-full h-hit py-5 lg:py-10">
     <div class="container mx-auto">
         {% comment %} Filter selection {% endcomment %}
-        <div class="min-w-[128px] flex justify-between items-center mx-4">
-            <div class="md:flex md:justify-center md:items-center md:gap-4">
-                <div class="flex gap-2 md:hidden">
-                    <span class="block text-xs font-light">Filter</span>
+            <div class="min-w-[128px] flex justify-between items-center mx-4">
+                 {%- for filter in collection.filters -%}
+                <div class="md:flex md:justify-center md:items-center md:gap-4">
+                    <div class="flex gap-2 md:hidden">
+                        <span class="block text-xs font-light">Filter</span>
+                        {%- render "arrow-down" -%}
+                    </div>
+                    <div class="hidden gap-2 md:flex">
+                        <span class="block text-xs font-light">{{ filter.label }}</span>
                     {%- render "arrow-down" -%}
+                    </div>
                 </div>
-                <div class="hidden gap-2 md:flex">
-                    <span class="block text-xs font-light">Style</span>
-                   {%- render "arrow-down" -%}
-                </div>
-                <div class="hidden gap-2 md:flex">
-                    <span class="block text-xs font-light">Absorbency</span>
-                    {%- render "arrow-down" -%}
-                </div>
-                <div class="hidden gap-2 md:flex">
-                    <span class="block text-xs font-light">Type</span>
-                    {%- render "arrow-down" -%}
-                </div>
-                <div class="hidden gap-2 md:flex">
-                    <span class="block text-xs font-light">What's it for</span>
-                    {%- render "arrow-down" -%}
-                </div>
-                <div class="hidden gap-2 md:flex">
-                    <span class="block text-xs font-light">Color</span>
-                    {%- render "arrow-down" -%}
-                </div>
-                <div class="hidden gap-2 md:flex">
-                    <span class="block text-xs font-light">Fabric</span>
-                    {%- render "arrow-down" -%}
+            {%- endfor -%}
+                {% comment %} Sort by {% endcomment %}
+                <div class="flex justify-center items-center gap-2">
+                    <div>
+                        <span class="text-xs font-light">Sort by:</span>
+                        <select id="sort-by" class="text-xs font-light">
+                            {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                            {%- for option in collection.sort_options -%}
+                                <option class="py-2 px-4" value="{{- option.val -}}" {%- if option.value == sort_by -%}selected="selected"{%- endif -%}>
+                                    {{ option.name }}
+                                </option>
+                            {%- endfor -%}
+                        </select>
+                    </div>
+                    <div>
+                        <span class="text-xs font-light">50 items</span>
+                    </div>
                 </div>
             </div>
-            {% comment %} Sort by {% endcomment %}
-            <div class="flex justify-center items-center gap-2">
-                <div>
-                    <span class="text-xs font-light">Sort by:</span>
-                    <select class="text-xs font-light">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                </div>
-                <div>
-                    <span class="text-xs font-light">50 items</span>
-                </div>
-            </div>
-        </div>
+       
         {% comment %} End Filter selection {% endcomment %}
         {% comment %} Filter card {% endcomment %}
         <div class="bg-gray-100 hidden fixed top-0 left-0 right-0 bottom-0 z-50  flex-col justify-start items-center gap-4 w-full py-10">
@@ -111,3 +94,31 @@
         {% comment %}End Product Grid {% endcomment %}
     </div>
 </section>
+{% comment %} <script>
+  Shopify.queryParams = {};
+
+  // Preserve existing query parameters
+  if (location.search.length) {
+    var params = location.search.substr(1).split('&');
+
+    for (var i = 0; i < params.length; i++) {
+      var keyValue = params[i].split('=');
+
+      if (keyValue.length) {
+        Shopify.queryParams[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+      }
+    }
+  }
+
+  // Update sort_by query parameter on select change
+  document.querySelector('#sort-by').addEventListener('change', function(e) {
+    var value = e.target.value;
+
+    Shopify.queryParams.sort_by = value;
+    location.search = new URLSearchParams(Shopify.queryParams).toString();
+  });
+</script> {% endcomment %}
+
+ {%- for filter in collection.filters -%}
+    {{ filter.label }}
+ {%- endfor -%}
