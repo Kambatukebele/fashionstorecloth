@@ -12,80 +12,63 @@
     </div>
 </section>
 {% render 'line-separator' %}
-<section class="w-full h-hit py-5 lg:py-10">
+<form>
+<section class="w-full h-hit py-5 lg:py-10 bg-gray-50">
     <div class="container mx-auto">
         {% comment %} Filter selection {% endcomment %}
-            <div class="min-w-[128px] flex justify-between items-center mx-4">
-                 {%- for filter in collection.filters -%}
-                <div class="md:flex md:justify-center md:items-center md:gap-4">
-                    <div class="flex gap-2 md:hidden">
-                        <span class="block text-xs font-light">Filter</span>
-                        {%- render "arrow-down" -%}
-                    </div>
-                    <div class="hidden gap-2 md:flex">
-                        <span class="block text-xs font-light">{{ filter.label }}</span>
-                    {%- render "arrow-down" -%}
-                    </div>
-                </div>
-            {%- endfor -%}
-                {% comment %} Sort by {% endcomment %}
-                <div class="flex justify-center items-center gap-2">
-                    <div>
-                        <span class="text-xs font-light">Sort by:</span>
-                        <select id="sort-by" class="text-xs font-light">
-                            {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                            {%- for option in collection.sort_options -%}
-                                <option class="py-2 px-4" value="{{- option.val -}}" {%- if option.value == sort_by -%}selected="selected"{%- endif -%}>
-                                    {{ option.name }}
-                                </option>
-                            {%- endfor -%}
-                        </select>
-                    </div>
-                    <div>
-                        <span class="text-xs font-light">50 items</span>
-                    </div>
+        <div class="min-w-[128px] mx-4 sm:mx-0 sm:flex sm:justify-between sm:items-center">
+            <div class="mb-5 sm:w-1/2 lg:flex lg:justify-start lg:items-center lg:gap-4 lg:mb-0 lg:w-2/3">
+                <div id="filter-collection" class="flex py-2 gap-2 cursor-pointer">
+                    <span class="block text-sm font-normal">Filter</span>
+                    {%- render "arrow-down", { class: "w-3 -rotate-90 duration-700 ease-in-out" } -%}
                 </div>
             </div>
-       
-        {% comment %} End Filter selection {% endcomment %}
-        {% comment %} Filter card {% endcomment %}
-        <div class="bg-gray-100 hidden fixed top-0 left-0 right-0 bottom-0 z-50  flex-col justify-start items-center gap-4 w-full py-10">
-            <div class="w-[280px] sm:w-[600px] mx-auto border shadow-2xl py-6 px-4">
-                <div class="flex justify-between items-center mb-4 w-full">
-                    <h5 class="text-2xl font-semibold">Filters</h5>
-                    <h6 class="text-xs font-light hover:underline"s>Clear All</h6>
+            {% comment %} Sort by {% endcomment %}
+            <div class="w-full flex flex-col justify-center sm:flex-row sm:items-center sm:w-1/2 sm:gap-2 lg:justify-end lg:w-2/6">
+                <div class="sm:flex sm:justify-center sm:items-center sm:gap-2">
+                    <span class="text-xs font-normal w-full block mb-2 sm:mb-0 sm:w-auto md:text-sm">Sort by:</span>
+                    <select id="sort-by" class="w-full text-xs font-light py-2 px-2 sm:w-auto">
+                        {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                        {%- for option in collection.sort_options -%}
+                            <option class="py-2 px-4" value="{{- option.val -}}" {%- if option.value == sort_by -%}selected="selected"{%- endif -%}>
+                                {{ option.name }}
+                            </option>
+                        {%- endfor -%}
+                    </select>
                 </div>
-                <div class="w-full mb-4">
-                    <div class="">
-                        <div class="flex justify-between items-center mb-2">
-                            <h5 class="text-xl font-semibold">Style</h5>
-                            <span class="block">{%- render "arrow-down" -%}</span>
-                        </div>
-                        <div class="">
-                            <input type="checkbox">
-                            <span class="text-xs font-lights">Swim</span>
-                        </div>
-                    </div>
+                <div class="mt-4 sm:mt-0 sm:w-auto">
+                    <span class="text-xs font-light">50 items</span>
                 </div>
-                <div class="w-full mb-4">
-                    <span class="text-base font-semibold">50 items</span>
-                    <button class="py-2 px-4 border text-sm bg-red-900 text-white">Appli</button>
-                </div>
-            </div>   
+            </div>
         </div>
-        {% comment %} End Filter card {% endcomment %}
+        {% comment %} Filter show and remove once selected {% endcomment %}
+        <div class="min-w-[200px] h-fit my-5 px-4 flex justify-start items-center gap-2 flex-wrap sm:px-0">
+            {%- for toRemove in collection.filters -%}
+                {%- if toRemove.active_values.size > 0 -%}
+                    <div class="bg-black text-white w-20 rounded-lg px-4 py-2">
+                       {{toRemove.active_values }}
+                    </div>
+                    <a href="{{ toRemove.url_to_remove }}" class="underline cursor-auto text-red-600">
+                        Reset
+                    </a>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+        {% comment %} Filter show and remove once selected {% endcomment %}
+        {% comment %} End Filter selection {% endcomment %}
+        
         {% comment %} Product Grid {% endcomment %}
         <div class="w-full my-5 grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
             {%- for product in collection.products -%}
                 <a href="{{ product.url }}" class="w-full shadow">
                     <div class="min-w-[144px] min-h-[186xpx] mb-2">
-                        <img class="w-full h-full object-contain object-center" src="{{ product.featured_image | image_url }}">
+                        {{ product.featured_image | image_url: width: 500 | image_tag: alt: "My image's alt text" }}
                     </div>
                     <div class="h-fit w-full flex flex-col justify-center items-start gap-4">
                         <h3 class="text-base font-semibold mx-2">{{ product.title }}</h3>
                         <h6 class="text-xs font-light mx-2">{{ product.price | money }}</h6>
                         <div class="mx-2">
-                            <span class="bg-red-600 w-4 h-4 block rounded-full"></span>
+                            <span class="bg-red-600 w-3 h-3 block rounded-full"></span>
                         </div>
                     </div>
                 </a>
@@ -94,8 +77,106 @@
         {% comment %}End Product Grid {% endcomment %}
     </div>
 </section>
-{% comment %} <script>
-  Shopify.queryParams = {};
+{% comment %} Filter card {% endcomment %}
+
+<div id="filder-card" class="bg-gray-100 shadow-2xl  duration-700 ease-in-out text-gray-900 absolute top-0 -right-[3500px]  flex-col justify-start flex-grow items-center gap-4 min-w-32 h-screen z-50">
+    <div class="w-[280px] sm:w-[600px] h-full mx-auto border shadow-2xl py-6 px-4">
+        <div class="flex justify-between items-center mb-4 w-full">
+            <h5 class="text-2xl font-semibold">Filters</h5>
+            <h6 class="text-xs font-light hover:underline">Clear All</h6>
+        </div>
+        {%- for filter in collection.filters -%}
+            <div class="w-full mb-4">
+                <div class="filter-card-description mb-10">
+                    <div class="flex justify-between items-center mb-2">
+                        <h5 class="text-xl font-semibold">{{- filter.label -}}</h5>
+                        {%- render "arrow-down", { class: "w-3 -rotate-90 duration-700 ease-in-out" } -%}
+                    </div>
+                    {%- case filter.type -%}
+                        {%- when "price_range" -%}
+                            <div class="ml-5 h-fit hidden  duration-700 ease-in-out">
+                            {%- for value in filter.values -%}
+                                <div class="mb-2">
+                                    <input type="checkbox" class="w-3 h-3 transform scale-150 lg:w-4 lg:h-4">
+                                    <span class="text-xs font-normal lg:text-sm">{{- value.label -}}</span>
+                                </div>
+                            {%- endfor -%}
+                        </div>
+                        {%- when "list" -%}
+                            <div class="ml-5 h-fit hidden  duration-700 ease-in-out">
+                            {%- for filter_value in filter.values -%}
+                                <div class="mb-2">
+                                    <input type="checkbox" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}" {% if filter_value.active -%}checked{%- endif %}
+                    {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %} class="w-3 h-3 transform scale-150 lg:w-4 lg:h-4">
+                                    <label for="Filter" class="text-xs font-normal lg:text-sm">{{- filter_value.label -}}</label>
+                                </div>
+                            {%- endfor -%}
+                        </div>                            
+                    {%- endcase -%}
+                </div>
+            </div>
+        {%- endfor -%}
+        <div class="w-full mb-4">
+            <span class="text-base font-semibold">50 items</span>
+            <button type="submit" value="Apply" class="py-2 px-4 border text-sm bg-red-900 text-white">Apply</button>
+        </div>
+    </div>   
+</div>
+</form>
+{% comment %} End Filter card {% endcomment %}
+
+<script>    
+    const OpenCloseCard = () =>{
+        // Show and Hide Filter box
+        const filterBtn = document.querySelector("#filter-collection");
+        const filterCard = document.querySelector("#filder-card");
+
+        // On click FIlter box
+        filterBtn.addEventListener("click", (e) =>{
+            if(filterCard.classList.contains("-right-[3500px]")){
+                //Flip the arrow down to up
+                e.target.nextElementSibling.classList.remove("-rotate-90");
+                e.target.nextElementSibling.classList.add("rotate-90");
+                //Show card
+                filterCard.classList.remove("-right-[3500px]");
+                filterCard.classList.add("right-0");
+                //Capture filter inside the box
+                const filterCardSection = document.querySelectorAll(".filter-card-description");
+                for(let i = 0; i < filterCardSection.length; i++){
+                    {% comment %} console.log(i); {% endcomment %}
+                    let filter = filterCardSection[i];
+                    filter.addEventListener("click", (event2) =>{
+                        //event2.target.nextElementSibling
+                        if(event2.target.parentNode.nextElementSibling.classList.contains("hidden")){
+                            // flip the down to up
+                            event2.target.nextElementSibling.classList.remove("-rotate-90");
+                            event2.target.nextElementSibling.classList.add("rotate-90");
+                            //Show Filter
+                            event2.target.parentNode.nextElementSibling.classList.remove("hidden");
+                        }else{
+                            // flip the up to down
+                            event2.target.nextElementSibling.classList.add("-rotate-90");
+                            event2.target.nextElementSibling.classList.remove("rotate-90");
+                            //Hide filter
+                            event2.target.parentNode.nextElementSibling.classList.add("hidden");
+                        }
+                    })
+                }
+            }else{
+                //Flip the arrow Up to down
+                e.target.nextElementSibling.classList.add("-rotate-90");
+                e.target.nextElementSibling.classList.remove("rotate-90");
+                 //Hide card
+                filterCard.classList.add("-right-[3500px]");
+                filterCard.classList.remove("right-0");
+            }
+            
+
+        });
+    }
+    OpenCloseCard();
+
+  {% comment %} Shopify.queryParams = {};
 
   // Preserve existing query parameters
   if (location.search.length) {
@@ -116,9 +197,6 @@
 
     Shopify.queryParams.sort_by = value;
     location.search = new URLSearchParams(Shopify.queryParams).toString();
-  });
-</script> {% endcomment %}
+  }); {% endcomment %}
+</script>
 
- {%- for filter in collection.filters -%}
-    {{ filter.label }}
- {%- endfor -%}
