@@ -1,0 +1,24 @@
+<section class="w-full h-fit py-5 lg:py-10">
+    <div class="container mx-auto">
+        <div class="flex flex-col justify-center items-start mx-4 gap-4">
+            <p class="text-xs font-light">
+              <a href="{{ shop.url }}">Home</a> /
+              <span>Collections</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Main collection banner",
+    "disabled_on": {"groups": ["header", "footer"]},
+    "settings": [
+        
+    ],
+    "blocks": [],
+    "presets": [
+        {"name": "Main collection list banner"}
+    ]
+}
+{% endschema %}
