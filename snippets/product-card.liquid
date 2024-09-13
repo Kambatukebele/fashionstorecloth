@@ -1,0 +1,20 @@
+{% comment %} 
+  This is a product card.
+    It Accept arguments:
+      link
+      featured_image
+      product_title
+      product_price
+{% endcomment %}
+
+{% comment %} Image {% endcomment %}
+<a href="{{ link }}" class="w-full">
+  <div class="min-w-[144px] min-h-[186xpx] mb-2">
+     {{ featured_image | image_url: width: 500 | image_tag: alt: "My image's alt text" }}
+  </div>
+  <div class="h-fit w-full flex flex-col justify-center items-start gap-4">
+      <h3 class="text-sm sm:text-base font-semibold mx-2 capitalize">{{  product_title }}</h3>
+      <h6 class="text-sm font-light mx-2 lg:text-base">{{ product_price | money }}</h6>
+      {% render 'swatches-div' %}
+  </div>
+</a>
