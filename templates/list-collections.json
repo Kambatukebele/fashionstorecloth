@@ -1,7 +1,20 @@
+<<<<<<< HEAD
+=======
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+>>>>>>> 1bdc537aabd518315f4034e9c4adca29a401999a
 {
   "sections": {
     "collection-banner": {
       "type": "main-collection-list-banner",
+<<<<<<< HEAD
       "settings": {}
     },
     "product-grid": {
@@ -10,4 +23,19 @@
     }
   },
   "order": ["collection-banner", "product-grid"]
+=======
+      "settings": {
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-list-product-grid",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "product-grid"
+  ]
+>>>>>>> 1bdc537aabd518315f4034e9c4adca29a401999a
 }
