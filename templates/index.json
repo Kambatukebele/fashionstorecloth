@@ -120,8 +120,8 @@
     "collection_product_rkiczF": {
       "type": "collection-product",
       "settings": {
-        "collection_product_title": "van's collection",
-        "collection_product_collection_list": "vans"
+        "collection_product_title": "Men's collection",
+        "collection_product_collection_list": "men"
       }
     }
   },
