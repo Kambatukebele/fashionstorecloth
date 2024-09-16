@@ -1,33 +1,16 @@
-<section class="w-full h-fit py-5">
-    <div class="container mx-auto flex flex-col gap-4">
-        <h2 class="w-full text-start text-2xl font-semibold">
-           {{ section.settings.collection_product_title }}
-        </h2>
-    </div>
-</section>
-<section class="w-full h-fit py-5">
+{% render 'top-tile-section', { title: section.settings.collection_product_title } %}
+
+<section class="w-full h-fit mb-5 lg:mb-10">
     <div class="flex overflow-x-auto hide-scrollbar h-[420px] xl:h-[550px]">
         {%- if section.settings.collection_product_collection_list != blank -%}
             {%- for product in section.settings.collection_product_collection_list.products -%}
-                <a href="{{ product.url }}" class="pb-4 w-[300px] h-[410px] mx-auto border flex justify-center items-start flex-col gap-4 mr-4 xl:w-[450px] xl:h-[530px]">
-                    <div class="w-72 h-80 xl:w-96">
-                        <img class="object-cover object-center w-full h-full" src="{{ product.featured_image | image_url }}">
-                    </div>
-                    <div class="px-2">
-                        <p class="text-base font-semibold">{{ product.title }}</p>
-                    </div>
-                    <div class="flex justify-start items-center gap-4 w-full px-2">
-                        <p class="text-sm font-normal">${{ product.price }}</p>
-                        <p class="text-sm bg-black text-white p-2">Save up to 25%</p>
-                    </div>
-                    <div class="w-full flex gap-2 px-2">
-                        <span class="w-5 h-5 rounded-full bg-red-700 block"></span>
-                        <span class="w-5 h-5 rounded-full bg-red-700 block"></span>
-                        <span class="w-5 h-5 rounded-full bg-red-700 block"></span>
-                        <span class="w-5 h-5 rounded-full bg-red-700 block"></span>
-                        <span class="w-5 h-5 rounded-full bg-red-700 block"></span>
-                    </div>
-                </a>
+                {% render 'home-product-card', { 
+                        link: product.url,
+                        featured_image: product.featured_image,
+                        product_title: product.title,
+                        product_price: product.price
+                    } 
+                %}
             {%- endfor -%}
             {%- else -%}
             {%- for productBlock in (1..10) -%}

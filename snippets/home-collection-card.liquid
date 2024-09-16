@@ -1,0 +1,17 @@
+{% comment %} 
+  This is the collection card in the home page
+  Accept: 
+    link,
+    image,
+    collection_title,
+{% endcomment %}
+
+<a href="{{ link }}" class="w-72 h-72 xl:w-96 xl:h-96 mx-auto  flex justify-center items-center flex-col gap-4 mr-4">
+    <div class="w-64 h-72 xl:w-80 xl:h-80">
+        {{ image | image_url: width: 500 | image_tag }}
+    </div>
+    <div class="flex justify-center items-center gap-2">
+        <p>{{ collection_title }}</p>
+        <span>{%- render "arrow-right-2" -%}</span>
+    </div>
+</a>
