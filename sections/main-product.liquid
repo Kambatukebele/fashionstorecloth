@@ -1,1 +1,113 @@
-Product 
+{% comment %} Capturing Product url {% endcomment %}
+{%- assign captureProductURl = product.url | replace: '/', '-'  -%}
+{%- assign ReplaceProductURLAgain = captureProductURl | replace: '-', ' ' -%}
+{%- assign productURL = ReplaceProductURLAgain | remove: "products" -%}
+{% comment %} {%- for vari in product.options_by_name['color'].values -%}
+  {{ vari }}
+{%- endfor -%} {% endcomment %}
+{% comment %} {{ product.options_by_name | json  }} {% endcomment %}
+ {{  product.options }}
+<section class="w-full h-fit py-5">
+  <div class="container px-4">
+    <div class="mb-5">
+      <p class="text-xs leading-6 text-gray-500 font-light">
+        <span>Home</span> /
+        <span>Shop {{ product.category }}</span> /
+        <span>{{- productURL -}}</span>
+      </p>
+    </div>
+    <div class="lg:flex lg:flex-row-reverse lg:justify-between">
+      <div class="lg:px-4 lg:w-[310px] xl:w-[370px] 2xl:w-[446px]">
+        <div class="mb-4">
+          <h1 class="text-gray-950 text-3xl leading-8 font-semibold text-ellipsis mb-2">{{- product.title -}}</h1>
+          <p class="text-sm leading-6 font-normal text-gray-600 mb-2">
+           {{- product.description -}}
+          </p>
+          <p class="font-normal text-gray-950 text-xl mb-2">
+            <span>{{- product.price | money -}}</span>
+            {%- if product.compare_at_price -%}
+              <span>{{- product.compare_at_price | money -}}</span>
+            {%- endif -%}
+          </p>
+        </div>
+        <div class="flex flex-col gap-2 justify-center items-start mb-4">
+          <h4 class="font-normal text-sm mb-1">Color: <span class="font-semibold">black</span></h4>
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Black" aria-label="Black" style="background-color: rgb(0, 0, 0); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]">
+              </span>
+              <span class="sr-only">Black</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Warm Sand" aria-label="Warm Sand" style="background-color: rgb(218, 185, 156); background-size: 18px 18px;">
+              <span class="left-0 top-0 w-[24px] h-[24px] border-black active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]">
+              </span>
+              <span class="sr-only">Warm Sand</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Dune" aria-label="Dune" style="background-color: rgb(247, 227, 210); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]"></span>
+              <span class="sr-only">Dune</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Sola" aria-label="Sola" style="background-color: rgb(132, 96, 91); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]"></span>
+              <span class="sr-only">Sola</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Sable" aria-label="Sable" style="background-color: rgb(94, 63, 59); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]"></span>
+              <span class="sr-only">Sable</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Mushroom" aria-label="Mushroom" style="background-color: rgb(163, 126, 108); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]">
+              </span>
+              <span class="sr-only">Mushroom</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Midnight" aria-label="Midnight" style="background-color: rgb(33, 56, 88); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]"></span>
+              <span class="sr-only">Midnight</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Pink Lemonade" aria-label="Pink Lemonade" style="background-color: rgb(239, 189, 227); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]"></span>
+              <span class="sr-only">Pink Lemonade</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Glacier" aria-label="Glacier" style="background-color: rgb(204, 207, 218); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]"></span>
+              <span class="sr-only">Glacier</span>
+            </button>
+            <button class="w-[24px] h-[24px] p-[3px] rounded-full bg-no-repeat bg-center bg-cover relative bg-clip-content" type="button" title="Lace Peony" aria-label="Lace Peony" style="background-image: url(&quot;https://images.ctfassets.net/bf9mldzqo3tn/3Hghexm2cC7ARSljkzNmYT/a208125ae99ddc1dfa8bb2102a026c40/Knix_Ghost_Mannequin_Revolution_Bra_Lace_Peony_Front.jpg&quot;); background-size: 18px 18px;">
+              <span class="top-[2px] left-[2px] w-[20px] h-[20px] border-knix_grey_3 active:left-0 active:top-0 active:w-[24px] active:h-[24px] active:border-knix_grey_3 rounded-full absolute border-[1px]"></span>
+              <span class="sr-only">Lace Peony</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex justify-between items-center mb-3">
+          <p class="leading-[18px] font-medium text-sm">size</p>
+          <p class="leading-[18px] font-normal text-sm text-gray-500 underline">Size Guide</p>
+        </div>
+        <select class="w-full pl-2 py-2 mb-5">
+          <option>S</option>
+          <option>S</option>
+          <option>S</option>
+          <option>S</option>
+          <option>S</option>
+        </select>
+        <div class="flex justify-between items-center border mb-10">
+          <div class="w-1/4 flex justify-between items-center p-2">
+            <span class="text-2xl block">-</span>
+            <span class="text-base block">1</span>
+            <span class="text-2xl block">+</span>
+          </div>
+          <div class="bg-blue-700 text-white w-3/4 py-3 px-2 flex justify-center items-center">
+            <span class="mr-2 text-base font-normal uppercase">Add to Bag</span>
+            <span class="text-base font-normal">123</span>
+          </div>
+        </div>
+      </div>
+      <div class="w-full block whitespace-nowrap overflow-x-auto md:grid md:grid-cols-2 md:gap-4 lg:w-[656px] xl:w-[828px] 2xl:w-[1000px]">
+        {%- for image in product.images -%}
+          <div class="w-[204px] h-[255px] border inline-block mr-4 sm:w-[528px] sm:h-[660px] md:w-[342px] md:h-[477px] md:block lg:w-[318px] lg:h-[411px] xl:w-[404px] xl:h-[517px] 2xl:w-[489px] 2xl:h-[624px]">
+            <img class="w-full h-full object-contains object-center" width="full" height="full" src="{{ image | image_url }}">
+          </div>
+        {%- endfor -%}      
+      </div>
+    </div>
+  </div>
+</section>
