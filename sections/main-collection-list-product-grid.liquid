@@ -3,11 +3,7 @@
       {% comment %} Product Grid {% endcomment %}
       <div class="w-full my-5 grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
           {%- for collection in collections -%}
-              {% render 'product-card', {
-                  link:  collection.url,
-                  featured_image: collection.featured_image,
-                  product_title: collection.title, 
-              } %}
+              {% render 'product-card', link: collection.url, featured_image: collection.featured_image, product_title: collection.title %}
           {%- endfor -%}
       </div>
       {% comment %}End Product Grid {% endcomment %}
@@ -16,3 +12,16 @@
 
 
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-card', {\n                  link:  collection.url,\n                  featured_image:
+    collection.featured_image,\n                  product_title: collection.title,
+    \n              } %}"
+  to: "{% render 'product-card', link: collection.url, featured_image: collection.featured_image,
+    product_title: collection.title %}"
+  position: 306..431
+{% endcomment %}

@@ -6,7 +6,7 @@
             <div class="mb-5 sm:w-1/2 lg:flex lg:justify-start lg:items-center lg:gap-4 lg:mb-0 lg:w-2/3">
                 <div id="filter-collection" class="flex py-2 gap-2 cursor-pointer">
                     <span class="block text-sm font-normal">Filter</span>
-                    {%- render "arrow-down", { class: "w-3 -rotate-90 duration-700 ease-in-out" } -%}
+                    {%- render "arrow-down", class: "w-3 -rotate-90 duration-700 ease-in-out" -%}
                 </div>
             </div>
             {% comment %} Sort by {% endcomment %}
@@ -50,12 +50,7 @@
         {% comment %} Product Grid {% endcomment %}
         <div class="w-full my-5 grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
             {%- for product in collection.products -%}
-                {% render 'product-card', {
-                    link:  product.url,
-                    featured_image: product.featured_image,
-                    product_title: product.title, 
-                    product_price: product.price
-                } %}
+                {% render 'product-card', link: product.url, featured_image: product.featured_image, product_title: product.title, product_price: product.price %}
             {%- endfor -%}
         </div>
         {% comment %}End Product Grid {% endcomment %}
@@ -74,7 +69,7 @@
                 <div class="filter-card-description mb-10">
                     <div class="flex justify-between items-center mb-2">
                         <h5 class="text-sm lg:text-base font-normal">{{- filter.label -}}</h5>
-                        {%- render "arrow-down", { class: "w-3 -rotate-90 duration-700 ease-in-out" } -%}
+                        {%- render "arrow-down", class: "w-3 -rotate-90 duration-700 ease-in-out" -%}
                     </div>
                     {%- case filter.type -%}
                         {%- when "price_range" -%}
@@ -184,3 +179,24 @@
   }); {% endcomment %}
 </script>
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- render "arrow-down", { class: "w-3 -rotate-90 duration-700 ease-in-out"
+    } -%}'
+  to: '{%- render "arrow-down", class: "w-3 -rotate-90 duration-700 ease-in-out" -%}'
+  position: 532..609
+- from: "{% render 'product-card', {\n                    link:  product.url,\n                    featured_image:
+    product.featured_image,\n                    product_title: product.title, \n
+    \                   product_price: product.price\n                } %}"
+  to: "{% render 'product-card', link: product.url, featured_image: product.featured_image,
+    product_title: product.title, product_price: product.price %}"
+  position: 3074..3220
+- from: '{%- render "arrow-down", { class: "w-3 -rotate-90 duration-700 ease-in-out"
+    } -%}'
+  to: '{%- render "arrow-down", class: "w-3 -rotate-90 duration-700 ease-in-out" -%}'
+  position: 4222..4299
+{% endcomment %}

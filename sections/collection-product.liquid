@@ -1,16 +1,10 @@
-{% render 'top-tile-section', { title: section.settings.collection_product_title } %}
+{% render 'top-tile-section', title: section.settings.collection_product_title %}
 
 <section class="w-full h-fit mb-5 lg:mb-10">
     <div class="flex overflow-x-auto hide-scrollbar h-[420px] xl:h-[550px]">
         {%- if section.settings.collection_product_collection_list != blank -%}
             {%- for product in section.settings.collection_product_collection_list.products -%}
-                {% render 'home-product-card', { 
-                        link: product.url,
-                        featured_image: product.featured_image,
-                        product_title: product.title,
-                        product_price: product.price
-                    } 
-                %}
+                {% render 'home-product-card', link: product.url, featured_image: product.featured_image, product_title: product.title, product_price: product.price %}
             {%- endfor -%}
             {%- else -%}
             {%- for productBlock in (1..10) -%}
@@ -66,4 +60,22 @@
         }
     ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'top-tile-section', { title: section.settings.collection_product_title
+    } %}"
+  to: "{% render 'top-tile-section', title: section.settings.collection_product_title
+    %}"
+  position: 0..81
+- from: "{% render 'home-product-card', { \n                        link: product.url,\n
+    \                       featured_image: product.featured_image,\n                        product_title:
+    product.title,\n                        product_price: product.price\n                    }
+    \n                %}"
+  to: "{% render 'home-product-card', link: product.url, featured_image: product.featured_image,
+    product_title: product.title, product_price: product.price %}"
+  position: 397..548
+{%- endcomment -%}

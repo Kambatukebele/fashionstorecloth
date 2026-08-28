@@ -1,15 +1,10 @@
-{% render 'top-tile-section', { title:  section.settings.featured_collection_title  } %}
+{% render 'top-tile-section', title: section.settings.featured_collection_title %}
 {% comment %}  {% endcomment %}
 <section class="w-full h-fit mb-5 lg:mb-10">
     <div class="flex overflow-x-auto hide-scrollbar h-[300px] xl:h-[400px]">
         {%- if section.settings.featured_collection_collection_list != blank -%}
             {%- for collection in section.settings.featured_collection_collection_list -%}
-                {% render 'home-collection-card', {
-                        link: collection.url,
-                        image: collection.featured_image
-                        collection_title: collection.title
-                    }
-                %}
+                {% render 'home-collection-card', link: collection.url, image: collection.featured_image, collection_title: collection.title %}
             {%- endfor -%}
             {%- else -%}
             {%- for productBlock in (1..10) -%}
@@ -56,4 +51,25 @@
         }
     ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'top-tile-section', { title:  section.settings.featured_collection_title
+    \ } %}"
+  to: "{% render 'top-tile-section', title: section.settings.featured_collection_title
+    %}"
+  position: 0..82
+- from: |-
+    {% render 'home-collection-card', {
+                            link: collection.url,
+                            image: collection.featured_image
+                            collection_title: collection.title
+                        }
+                    %}
+  to: "{% render 'home-collection-card', link: collection.url, image: collection.featured_image,
+    collection_title: collection.title %}"
+  position: 425..552
+{%- endcomment -%}
